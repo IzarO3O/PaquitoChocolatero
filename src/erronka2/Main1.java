@@ -35,6 +35,10 @@ public class Main1 implements MenuBar, FIBA, fondito, DenboraldiMenu,  WindowLis
 	private JTable table_1;
 	private JTable table;
 	private JTable table_2;
+	private JPanel panelin;
+	private pruebat Fa;
+	private pruebis Fe;
+	private pruebiru Fi;
 
 	/**
 	 * Launch the application.
@@ -49,6 +53,17 @@ public class Main1 implements MenuBar, FIBA, fondito, DenboraldiMenu,  WindowLis
 	};
 	public int[] puntuakMenArray = new int[taldeakMenArray.length];
 
+	
+	private void ShowPane (JPanel p) {
+		p.setSize (713, 384);
+		p.setLocation(0,0);
+		
+		panelin.removeAll();
+		panelin.add(p, BorderLayout.CENTER);
+		panelin.revalidate();
+		panelin.repaint();
+		
+	}
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -69,20 +84,32 @@ public class Main1 implements MenuBar, FIBA, fondito, DenboraldiMenu,  WindowLis
 	@SuppressWarnings("serial")
 	public void initialize() {
 		// TODO Auto-generated method stub
+		Fa = new pruebat();
+		Fa.setSize(713, 384);
+		Fa.setLocation(0,0);
+		
+		Fe = new pruebis();
+		Fe.setSize(713, 384);
+		Fe.setLocation(0,0);
+		
+		Fi = new pruebiru();
+		Fi.setSize(713, 384);
+		Fi.setLocation(0,0);
+		
 		Main1 = new JFrame ();
 		Main1.getContentPane().setBackground(new Color(255, 255, 255));
 		Main1.setTitle("Saskibaloi Asoziazioa");
 		Main1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Main1.setBounds(100, 100, 729, 451);
 		
-		etxeaRel();
+		//etxeaRel();
 		Main1.getContentPane().add(fondito, BorderLayout.CENTER);		
 		Main1.getContentPane().setLayout(null);
 		
-		JPanel panel = new JPanel();
-		panel.setBounds(10, 10, 695, 368);
-		Main1.getContentPane().add(panel);
-		panel.setLayout(null);
+		panelin = new JPanel(new BorderLayout());
+		panelin.setSize(710, 380);
+		panelin.add(Fa, BorderLayout.CENTER);
+		Main1.add(panelin);
 		
 				
 		
@@ -103,22 +130,19 @@ public class Main1 implements MenuBar, FIBA, fondito, DenboraldiMenu,  WindowLis
 		
 		FIBA.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent actionEvent) {
-        	menuBar.setVisible(true);
-        	FIBARel ();
-    		Main1.getContentPane().add(FIBAA, BorderLayout.CENTER);	
-
-
+			ShowPane(Fa);
         }	
 		});
 		
 		DenboraldiMenu.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent actionEvent) {
-        	FIBAA.setVisible(false);
-        	menuBar.setVisible(true);
-    		Main1.getContentPane().add(DenboraldiMenu, BorderLayout.CENTER);	
-    		
-
-
+			ShowPane(Fe);
+        }	
+		});
+		
+		fondito.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent actionEvent) {
+			ShowPane(Fi);
         }	
 		});
 		
