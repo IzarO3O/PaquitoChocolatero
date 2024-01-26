@@ -27,7 +27,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.JButton;
 
-public class Main1 implements MenuBar, FIBA, fondito, DenboraldiMenu,  WindowListener {
+public class Main1 implements MenuBar,  WindowListener {
 
 	public JFrame Main1 ;
 		
@@ -36,9 +36,9 @@ public class Main1 implements MenuBar, FIBA, fondito, DenboraldiMenu,  WindowLis
 	private JTable table;
 	private JTable table_2;
 	private JPanel panelin;
-	private pruebat Fa;
-	private pruebis Fe;
-	private pruebiru Fi;
+	private FIBA Fa;
+	private Etxea Fe;
+	private Denboraldiak Fi;
 
 	/**
 	 * Launch the application.
@@ -48,11 +48,7 @@ public class Main1 implements MenuBar, FIBA, fondito, DenboraldiMenu,  WindowLis
 	};
 	public int[] puntuakEkiArray = new int[taldeakEkiArray.length];
 
-	public String[] taldeakMenArray = {
-			"Denver Nuggets", "Minnesota Timberwolves", "Dallas Mavericks", "Houston Rockets", "Golden State Warriors", "Los Angeles Clippers"
-	};
-	public int[] puntuakMenArray = new int[taldeakMenArray.length];
-
+	
 	
 	private void ShowPane (JPanel p) {
 		p.setSize (713, 384);
@@ -84,49 +80,58 @@ public class Main1 implements MenuBar, FIBA, fondito, DenboraldiMenu,  WindowLis
 	@SuppressWarnings("serial")
 	public void initialize() {
 		// TODO Auto-generated method stub
-		Fa = new pruebat();
+		Fa = new FIBA();
 		Fa.setSize(713, 384);
 		Fa.setLocation(0,0);
 		
-		Fe = new pruebis();
+		Fe = new Etxea();
 		Fe.setSize(713, 384);
 		Fe.setLocation(0,0);
 		
-		Fi = new pruebiru();
+		Fi = new Denboraldiak();
 		Fi.setSize(713, 384);
 		Fi.setLocation(0,0);
 		
 		Main1 = new JFrame ();
+		Main1.setResizable(false);
 		Main1.getContentPane().setBackground(new Color(255, 255, 255));
 		Main1.setTitle("Saskibaloi Asoziazioa");
 		Main1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Main1.setBounds(100, 100, 729, 451);
 		
 		//etxeaRel();
-		Main1.getContentPane().add(fondito, BorderLayout.CENTER);		
+		Main1.getContentPane().add(Denboraldiak, BorderLayout.CENTER);		
 		Main1.getContentPane().setLayout(null);
 		
 		panelin = new JPanel(new BorderLayout());
 		panelin.setSize(710, 380);
-		panelin.add(Fa, BorderLayout.CENTER);
-		Main1.add(panelin);
+		panelin.add(Fe, BorderLayout.CENTER);
+		Main1.getContentPane().add(panelin);
 		
 				
 		
-		fondito.setVisible(true);
-		FIBAA.setVisible(true);
-		DenboraldiMenu.setVisible(true);
+		Denboraldiak.setVisible(true);
+		FIBA.setVisible(true);
+		Etxea.setVisible(true);
 		
 
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBackground(new Color(128, 128, 192));
 		Main1.setJMenuBar(menuBar);
 		
+		menuBar.add(Etxea);
+		menuBar.add(Denboraldiak);
 		menuBar.add(FIBA);
-		menuBar.add(fondito);
-		menuBar.add(DenboraldiMenu);
 		
 		
+		
+		
+		
+		Denboraldiak.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent actionEvent) {
+			ShowPane(Fi);
+        }	
+		});
 		
 		FIBA.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent actionEvent) {
@@ -134,19 +139,11 @@ public class Main1 implements MenuBar, FIBA, fondito, DenboraldiMenu,  WindowLis
         }	
 		});
 		
-		DenboraldiMenu.addActionListener(new ActionListener() {
+		Etxea.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent actionEvent) {
 			ShowPane(Fe);
         }	
 		});
-		
-		fondito.addActionListener(new ActionListener() {
-		public void actionPerformed(ActionEvent actionEvent) {
-			ShowPane(Fi);
-        }	
-		});
-		
-		
 
         
 

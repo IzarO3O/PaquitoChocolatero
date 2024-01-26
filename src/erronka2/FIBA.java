@@ -1,225 +1,218 @@
 package erronka2;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.BoxLayout;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JComboBox;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.net.NetPermission;
+import java.net.URL;
+
+import javax.swing.JTable;
 import javax.swing.JButton;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JTextField;
-import javax.swing.JSplitPane;
+import javax.swing.JComboBox;
+import javax.swing.JComponent;
+import javax.swing.JFormattedTextField;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.JSpinner;
 
-public interface FIBA extends MenuBar {
+public class FIBA extends JPanel {
 
-	public  JPanel FIBAA = new JPanel();
-	public  JTextField txtIzena = new JTextField();
-	public  JTextField txtEguzkilore = new JTextField();
+	private static final long serialVersionUID = 1L;
+	private JTextField textField;
+	private boolean ireki=false;
 
 	/**
-	 * Launch the application.
-	 * @wbp.parser.entryPoint
+	 * Create the panel.
 	 */
 	
-	
-	public default void FIBARel() {
+	public FIBA() {
 		
-		FIBAA.setBounds(10, 10, 650, 350);
-		FIBAA.setLayout(null);
+		setBounds(0,0,710, 380);
+		setBackground(new Color(128, 128, 128));
+		setLayout(null);
 		
-		
-		JPanel panel1 = new JPanel();
-		panel1.setBounds(10, 10, 300, 300);
-		FIBAA.add(panel1);{
-		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(10, 235, 98, 21);
-		panel1.add(comboBox);
-		comboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Paco", "Paquito", "Manolito", "Manolo", "Galileo", "Gervasio", "Nicolas"}));
-
-		JComboBox comboBox2 = new JComboBox();
-		comboBox2.setBounds(10, 235, 98, 21);
-		panel1.add(comboBox2);
-		comboBox2.setModel(new DefaultComboBoxModel<String>(new String[] {"Paco", "Paquito", "Manolito", "Manolo", "Galileo", "Gervasio", "Nicolas"}));
-
-		JComboBox comboBox3 = new JComboBox();
-		comboBox3.setBounds(10, 235, 98, 21);
-		panel1.add(comboBox3);
-		comboBox3.setModel(new DefaultComboBoxModel<String>(new String[] {"Paco", "Paquito", "Manolito", "Manolo", "Galileo", "Gervasio", "Nicolas"}));
-
-		JComboBox comboBox4 = new JComboBox();
-		comboBox4.setBounds(10, 235, 98, 21);
-		panel1.add(comboBox4);
-		comboBox4.setModel(new DefaultComboBoxModel<String>(new String[] {"Paco", "Paquito", "Manolito", "Manolo", "Galileo", "Gervasio", "Nicolas"}));
-
-		JComboBox comboBox5 = new JComboBox();
-		comboBox5.setBounds(10, 235, 98, 21);
-		panel1.add(comboBox5);
-		comboBox5.setModel(new DefaultComboBoxModel<String>(new String[] {"Paco", "Paquito", "Manolito", "Manolo", "Galileo", "Gervasio", "Nicolas"}));
-
-		
-		}
+		menuFIBA();
 		
 		
 		
-		JPanel panel2 = new JPanel();
-		panel2.setBounds(325, 10, 300, 300);
-		FIBAA.add(panel2);{
-			
-		JComboBox comboBox12 = new JComboBox();
-		comboBox12.setBounds(10, 235, 98, 21);
-		panel2.add(comboBox12);
-		comboBox12.setModel(new DefaultComboBoxModel<String>(new String[] {"Paco", "Paquito", "Manolito", "Manolo", "Galileo", "Gervasio", "Nicolas"}));
-
-		JComboBox comboBox13 = new JComboBox();
-		comboBox13.setBounds(10, 235, 98, 21);
-		panel2.add(comboBox13);
-		comboBox13.setModel(new DefaultComboBoxModel<String>(new String[] {"Paco", "Paquito", "Manolito", "Manolo", "Galileo", "Gervasio", "Nicolas"}));
-
-		JComboBox comboBox14 = new JComboBox();
-		comboBox14.setBounds(10, 235, 98, 21);
-		panel2.add(comboBox14);
-		comboBox14.setModel(new DefaultComboBoxModel<String>(new String[] {"Paco", "Paquito", "Manolito", "Manolo", "Galileo", "Gervasio", "Nicolas"}));
-
-		JComboBox comboBox15 = new JComboBox();
-		comboBox15.setBounds(10, 235, 98, 21);
-		panel2.add(comboBox15);
-		comboBox15.setModel(new DefaultComboBoxModel<String>(new String[] {"Paco", "Paquito", "Manolito", "Manolo", "Galileo", "Gervasio", "Nicolas"}));
-
-		JComboBox comboBox16 = new JComboBox();
-		comboBox16.setBounds(10, 235, 98, 21);
-		panel2.add(comboBox16);
-		comboBox16.setModel(new DefaultComboBoxModel<String>(new String[] {"Paco", "Paquito", "Manolito", "Manolo", "Galileo", "Gervasio", "Nicolas"}));
-
-		}
-		/*
-		JButton Botoia = new JButton("Jolastu");
-		Botoia.setBounds(270, 315, 100, 25);
-		Botoia.setBounds(null);
-		FIBAA.add(Botoia);
-		*/
 		
-
-
 	}
-	/*public default void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					FIBA frame = new FIBA();
-					frame.FIBA.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	
-	/**
-	 * Create the frame.
-	 
-	public default void FIBA() {
-		FIBA.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		FIBA.setBounds(100, 100, 693, 492);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
-		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(10, 235, 98, 21);
-		contentPane.add(comboBox);
-		comboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Paco", "Paquito", "Manolito", "Manolo", "Galileo", "Gervasio", "Nicolas"}));
-
-		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setBounds(86, 343, 138, 21);
-		contentPane.add(comboBox_1);
-		comboBox_1.setModel(new DefaultComboBoxModel<String>(new String[] {"Paco", "Paquito", "Manolito", "Manolo", "Galileo", "Gervasio", "Nicolas"}));
-
-		JComboBox comboBox_2 = new JComboBox();
-		comboBox_2.setBounds(209, 235, 112, 21);
-		contentPane.add(comboBox_2);
-		comboBox_2.setModel(new DefaultComboBoxModel<String>(new String[] {"Paco", "Paquito", "Manolito", "Manolo", "Galileo", "Gervasio", "Nicolas"}));
-		
+	public void menuFIBA () {
+		this.jokalariBerri();
 		JButton btnNewButton = new JButton("Jolastu");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 			}
 		});
-		btnNewButton.setBounds(287, 390, 104, 21);
-		contentPane.add(btnNewButton);
-
+		btnNewButton.setBounds(549, 13, 145, 30);
+		add(btnNewButton);
 		
-		JComboBox comboBox_3_2 = new JComboBox();
-		comboBox_3_2.setBounds(537, 90, 132, 21);
-		contentPane.add(comboBox_3_2);
-		comboBox_3_2.setModel(new DefaultComboBoxModel<String>(new String[] {"Paco", "Paquito", "Manolito", "Manolo", "Galileo", "Gervasio", "Nicolas"}));
-
+		JButton btnJokalariBerria = new JButton("Jokalari Berria");
+		btnJokalariBerria.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
+			public void actionPerformed(ActionEvent e) {
+				ireki=true;
+			}
+		});
+		btnJokalariBerria.setBounds(24, 13, 145, 30);
+		add(btnJokalariBerria);
 		
-		JComboBox comboBox_3_3 = new JComboBox();
-		comboBox_3_3.setBounds(378, 235, 132, 21);
-		contentPane.add(comboBox_3_3);
-		comboBox_3_3.setModel(new DefaultComboBoxModel<String>(new String[] {"Paco", "Paquito", "Manolito", "Manolo", "Galileo", "Gervasio", "Nicolas"}));
-
-		
-		JComboBox comboBox_3_5 = new JComboBox();
-		comboBox_3_5.setBounds(547, 235, 132, 21);
-		contentPane.add(comboBox_3_5);
-		comboBox_3_5.setModel(new DefaultComboBoxModel<String>(new String[] {"Paco", "Paquito", "Manolito", "Manolo", "Galileo", "Gervasio", "Nicolas"}));
-		
-		JPanel panel = new JPanel();
-		panel.setBounds(10, 53, 326, 327);
-		contentPane.add(panel);
-				panel.setLayout(null);
-		
-				JComboBox comboBox_4 = new JComboBox();
-				comboBox_4.setBounds(193, 72, 99, 19);
-				panel.add(comboBox_4);
-				comboBox_4.setModel(new DefaultComboBoxModel<String>(new String[] {"Paco", "Paquito", "Manolito", "Manolo", "Galileo", "Gervasio", "Nicolas"}));
+		JComboBox comboBox_1 = new JComboBox();
+		comboBox_1.setBackground(new Color(128, 128, 255));
+		comboBox_1.setBounds(183, 112, 64, 21);
+		add(comboBox_1);
+		comboBox_1.setModel(new DefaultComboBoxModel<String>(new String[] {"Paco", "Paquito", "Manolito", "Manolo", "Galileo", "Gervasio", "Nicolas"}));
+		//    panel.drawImage(background, 0, 0, null);
+			
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBackground(new Color(128, 128, 255));
+		comboBox.setBounds(97, 189, 64, 21);
+		add(comboBox);
+		comboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Paco", "Paquito", "Manolito", "Manolo", "Galileo", "Gervasio", "Nicolas"}));
+			
 				
-						JComboBox comboBox_3 = new JComboBox();
-						comboBox_3.setBounds(28, 52, 88, 21);
-						panel.add(comboBox_3);
-						comboBox_3.setModel(new DefaultComboBoxModel<String>(new String[] {"Paco", "Paquito", "Manolito", "Manolo", "Galileo", "Gervasio", "Nicolas"}));
-		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(353, 53, 326, 327);
-		contentPane.add(panel_1);
-		panel_1.setLayout(null);
-				
-				JComboBox comboBox_3_1 = new JComboBox();
-				comboBox_3_1.setBounds(20, 108, 132, 21);
-				panel_1.add(comboBox_3_1);
-				comboBox_3_1.setModel(new DefaultComboBoxModel<String>(new String[] {"Paco", "Paquito", "Manolito", "Manolo", "Galileo", "Gervasio", "Nicolas"}));
-				
-						
-						JComboBox comboBox_3_4 = new JComboBox();
-						comboBox_3_4.setBounds(95, 257, 132, 21);
-						panel_1.add(comboBox_3_4);
-						comboBox_3_4.setModel(new DefaultComboBoxModel<String>(new String[] {"Paco", "Paquito", "Manolito", "Manolo", "Galileo", "Gervasio", "Nicolas"}));
-						
-						txtIzena = new JTextField();
-						txtIzena.setBounds(128, 20, 96, 19);
-						contentPane.add(txtIzena);
-						txtIzena.setText("Brakizefaloak");
-						txtIzena.setColumns(10);
-						
-								
-								txtEguzkilore = new JTextField();
-								txtEguzkilore.setBounds(471, 20, 96, 19);
-								contentPane.add(txtEguzkilore);
-								txtEguzkilore.setText("Hidrozefalikoak");
-								txtEguzkilore.setColumns(10);
+		JComboBox comboBox_3 = new JComboBox();
+		comboBox_3.setBackground(new Color(128, 128, 255));
+		comboBox_3.setBounds(423, 85, 64, 21);
+		add(comboBox_3);
+		comboBox_3.setModel(new DefaultComboBoxModel<String>(new String[] {"Paco", "Paquito", "Manolito", "Manolo", "Galileo", "Gervasio", "Nicolas"}));
+					
+							
+		JComboBox comboBox_4 = new JComboBox();
+		comboBox_4.setBackground(new Color(128, 128, 255));
+		comboBox_4.setBounds(475, 290, 64, 21);
+		add(comboBox_4);
+		comboBox_4.setModel(new DefaultComboBoxModel<String>(new String[] {"Paco", "Paquito", "Manolito", "Manolo", "Galileo", "Gervasio", "Nicolas"}));
+							
+									
+		JComboBox comboBox_2 = new JComboBox();
+		comboBox_2.setBackground(new Color(128, 128, 255));
+		comboBox_2.setBounds(163, 290, 64, 21);
+		add(comboBox_2);
+		comboBox_2.setModel(new DefaultComboBoxModel<String>(new String[] {"Paco", "Paquito", "Manolito", "Manolo", "Galileo", "Gervasio", "Nicolas"}));
+									
+											
+		JComboBox comboBox_8 = new JComboBox();
+		comboBox_8.setBackground(new Color(255, 128, 128));
+		comboBox_8.setBounds(248, 259, 64, 21);
+		add(comboBox_8);
+		comboBox_8.setModel(new DefaultComboBoxModel<String>(new String[] {"Paco", "Paquito", "Manolito", "Manolo", "Galileo", "Gervasio", "Nicolas"}));
+											
+													
+		JComboBox comboBox_9 = new JComboBox();
+		comboBox_9.setBackground(new Color(255, 128, 128));
+		comboBox_9.setBounds(183, 85, 64, 21);
+		add(comboBox_9);
+		comboBox_9.setModel(new DefaultComboBoxModel<String>(new String[] {"Paco", "Paquito", "Manolito", "Manolo", "Galileo", "Gervasio", "Nicolas"}));
+													
+															
+		JComboBox comboBox_6 = new JComboBox();
+		comboBox_6.setBackground(new Color(255, 128, 128));
+		comboBox_6.setBounds(475, 259, 64, 21);
+		add(comboBox_6);
+		comboBox_6.setModel(new DefaultComboBoxModel<String>(new String[] {"Paco", "Paquito", "Manolito", "Manolo", "Galileo", "Gervasio", "Nicolas"}));
+															
+		JComboBox comboBox_5 = new JComboBox();
+		comboBox_5.setBackground(new Color(255, 128, 128));
+		comboBox_5.setBounds(570, 189, 64, 21);
+		add(comboBox_5);
+		comboBox_5.setModel(new DefaultComboBoxModel<String>(new String[] {"Paco", "Paquito", "Manolito", "Manolo", "Galileo", "Gervasio", "Nicolas"}));
+															
+																	
+		JComboBox comboBox_7 = new JComboBox();
+		comboBox_7.setBackground(new Color(255, 128, 128));
+		comboBox_7.setBounds(506, 112, 64, 21);
+		add(comboBox_7);
+		comboBox_7.setModel(new DefaultComboBoxModel<String>(new String[] {"Paco", "Paquito", "Manolito", "Manolo", "Galileo", "Gervasio", "Nicolas"}));
+																	
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(FIBA.class.getResource("/erronka2/court.jpg")));
+		lblNewLabel.setBounds(55, 53, 617, 292);
+		add(lblNewLabel);
 
+	}
+	
+	public void jokalariBerri() {
+		if (ireki==true) {
+			JPanel panel = new JPanel();
+		panel.setBackground(new Color(192, 192, 192));
+		panel.setBounds(48, 28, 605, 309);
+		add(panel);
+		panel.setLayout(null);
 		
-	}*/
+		JLabel lblNewLabel_1 = new JLabel("IZENA");
+		lblNewLabel_1.setBounds(46, 40, 45, 13);
+		panel.add(lblNewLabel_1);
+		
+		textField = new JTextField();
+		textField.setBounds(46, 63, 96, 19);
+		panel.add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblNewLabel_2 = new JLabel("ABIERA (0-120)");
+		lblNewLabel_2.setBounds(43, 103, 126, 13);
+		panel.add(lblNewLabel_2);
+		
+		JSpinner spinner_3 = new JSpinner();
+		spinner_3.setBounds(46, 126, 30, 20);
+		panel.add(spinner_3);
+		
+		JLabel lblNewLabel_3 = new JLabel("DEFENTZA (0-120)");
+		lblNewLabel_3.setBounds(46, 156, 191, 13);
+		panel.add(lblNewLabel_3);
+		
+		JSpinner spinner_1 = new JSpinner();
+		spinner_1.setBounds(46, 179, 30, 20);
+		panel.add(spinner_1);
+		
+		JLabel lblNewLabel_4 = new JLabel("PUNTERIA (0-120)");
+		lblNewLabel_4.setBounds(39, 218, 147, 13);
+		panel.add(lblNewLabel_4);
+		
+		JSpinner spinner_2 = new JSpinner();
+		spinner_2.setBounds(46, 241, 30, 20);
+		panel.add(spinner_2);
+		
+		JButton btnNewButton_1 = new JButton("SARTU");
+		btnNewButton_1.setBounds(333, 62, 85, 21);
+		panel.add(btnNewButton_1);
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (textField.getText().isEmpty()) {
+					JOptionPane.showMessageDialog(new JFrame(), "Parametro guztiak idatzi","Error",JOptionPane.WARNING_MESSAGE);
+				}else {
+					int abi = (Integer) spinner_3.getValue();
+					int pun = (Integer) spinner_1.getValue();
+					int def = (Integer) spinner_2.getValue();
+
+					if (abi>120||abi<0||def>120||def<0||pun>120||pun<0) {
+						JOptionPane.showMessageDialog(new JFrame(), "Habilitatea ez da onartzen","Error",JOptionPane.WARNING_MESSAGE);
+					}else {
+						
+					}
+				}
+		}});
+		
+				
+				 
+			}
+
+			
+			
+		/*	public int getTextField(JSpinner spinner) {
+				// TODO Auto-generated method stub
+				return 4266;
+			}*/
+		
+	}
 }

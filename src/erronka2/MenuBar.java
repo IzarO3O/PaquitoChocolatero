@@ -17,8 +17,8 @@ public interface MenuBar  {
 	/**
 	 * 
 	 */
-	public JMenuItem FIBA = new JMenuItem("FIBA");
-	public JMenuItem fondito = new JMenuItem("Etxea");
-	public JMenuItem DenboraldiMenu = new JMenuItem ("Denboraldiak");
 	
+	public JMenuItem Denboraldiak = new JMenuItem("Denboraldiak");
+	public JMenuItem Etxea = new JMenuItem ("Etxea");
+	public JMenuItem FIBA = new JMenuItem("FIBA");
 }
