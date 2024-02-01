@@ -1,4 +1,4 @@
-package ebaluazioa2.serializazioa;
+package pasatutaJulen;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

@@ -68,7 +68,289 @@ public class Denboraldiak extends JPanel {
 	public Denboraldiak() {
 		setLayout(null);
 		
-		menu();
+		//HASIERA DENBORALDI 1
+			/*	button.setBounds(178, 152, 85, 28);
+				panel_1.add(button);
+
+				panel_2.setVisible(false);
+*/
+				
+				JPanel panel1 = new JPanel();
+				panel1.setBounds(20, 22, 708, 319);
+				add(panel1);
+				panel1.setLayout(null);
+				
+				table = new JTable();
+				table.setModel(new DefaultTableModel(
+					new Object[][] {
+						{"Boston Celtics", "Cleveland Cavaliers", "TD Garden", new Integer(127), new Integer(112)},
+						{"Broolyn Nets", "Atlanta Hawks", "Barclays Center", new Integer(97), new Integer(102)},
+						{"Chicago Bulls", "Charlotte Hornets", "United Center", new Integer(114), new Integer(87)},
+					},
+					new String[] {
+						"Etxea", "Kanpokoa", "Zelaia", "Etxeko puntuak", "Kanpoko puntuak"
+					}
+				) {
+					Class[] columnTypes = new Class[] {
+						Object.class, Object.class, Object.class, Integer.class, Integer.class
+					};
+					public Class getColumnClass(int columnIndex) {
+						return columnTypes[columnIndex];
+					}
+				});
+				table.getColumnModel().getColumn(1).setPreferredWidth(92);
+				table.getColumnModel().getColumn(3).setPreferredWidth(28);
+				table.getColumnModel().getColumn(4).setPreferredWidth(31);
+				table.setBounds(10, 10, 233, 50);
+				panel1.add(table);
+				
+				table_1 = new JTable();
+				table_1.setModel(new DefaultTableModel(
+					new Object[][] {
+						{"Cleveland Cavaliers", "Boston Celtics", "Rocket Mortgage FieldHouse", new Integer(107), new Integer(121)},
+						{"Atlanta Hawks", "Brooklyn Nets", "State Farm Arena", new Integer(87), new Integer(92)},
+						{"Charlotte Hornets", "Chicago Bulls", "Spectrum Center", new Integer(97), new Integer(101)},
+					},
+					new String[] {
+							"Etxea", "Kanpokoa", "Zelaia", "Etxeko puntuak", "Kanpoko puntuak"
+					}
+				) {
+					Class[] columnTypes = new Class[] {
+						Object.class, Object.class, Object.class, Integer.class, Integer.class
+					};
+					public Class getColumnClass(int columnIndex) {
+						return columnTypes[columnIndex];
+					}
+					boolean[] columnEditables = new boolean[] {
+						false, false, false, false, false
+					};
+					public boolean isCellEditable(int row, int column) {
+						return columnEditables[column];
+					}
+				});
+				table_1.setBounds(253, 10, 233, 50);
+				panel1.add(table_1);
+				
+				table_2 = new JTable();
+				table_2.setModel(new DefaultTableModel(
+					new Object[][] {
+						{"Boston Celtics", "Atlanta Hawks", "TD Garden", new Integer(101), new Integer(107)},
+						{"Cleveland Cavaliers", "Charlotte Hornets", "Rocket Mortgage FieldHouse", new Integer(96), new Integer(81)},
+						{"Brooklyn Nets", "Chicago Bulls", "Barclays Center", new Integer(97), new Integer(98)},
+					},
+					new String[] {
+						"Etxea", "Kanpokoa", "Zelaia", "Etxeko puntuak", "Kanpoko puntuak"
+					}
+				) {
+					Class[] columnTypes = new Class[] {
+						Object.class, Object.class, Object.class, Integer.class, Integer.class
+					};
+					public Class getColumnClass(int columnIndex) {
+						return columnTypes[columnIndex];
+					}
+					boolean[] columnEditables = new boolean[] {
+						false, false, false, false, false
+					};
+					public boolean isCellEditable(int row, int column) {
+						return columnEditables[column];
+					}
+				});
+				table_2.setBounds(498, 10, 200, 50);
+				panel1.add(table_2);
+				
+				table_3 = new JTable();
+				table_3.setModel(new DefaultTableModel(
+					new Object[][] {
+						{"Atlanta Hawks", "Boston Celtics", "State Farm Arena", new Integer(88), new Integer(102)},
+						{"Charlotte Hornets", "Cleveland Cavaliers", "Spectrum Center", new Integer(90), new Integer(79)},
+						{"Chicago Bulls", "Brooklyn Nets", "United Center", new Integer(102), new Integer(99)},
+					},
+					new String[] {
+						"Etxea", "Kanpokoa", "Zelaia", "Etxeko puntuak", "Kanpoko puntuak"
+					}
+				) {
+					Class[] columnTypes = new Class[] {
+						Object.class, Object.class, Object.class, Integer.class, Integer.class
+					};
+					public Class getColumnClass(int columnIndex) {
+						return columnTypes[columnIndex];
+					}
+					boolean[] columnEditables = new boolean[] {
+						false, false, false, false, false
+					};
+					public boolean isCellEditable(int row, int column) {
+						return columnEditables[column];
+					}
+				});
+				table_3.setBounds(10, 94, 200, 50);
+				panel1.add(table_3);
+				
+				table_4 = new JTable();
+				table_4.setModel(new DefaultTableModel(
+					new Object[][] {
+						{"Boston Celtics", "Charlotte Hornets", "TD Garden", new Integer(101), new Integer(107)},
+						{"Atlanta Hawks", "Chicago Bulls ", "State Farm Arena", new Integer(96), new Integer(81)},
+						{"Cleveland Cavaliers", "Brooklyn Nets", "Rocket Mortgage FieldHouse", new Integer(97), new Integer(98)},
+					},
+					new String[] {
+						"Etxea", "Kanpokoa", "Zelaia", "Etxeko puntuak", "Kanpoko puntuak"
+					}
+				) {
+					Class[] columnTypes = new Class[] {
+						Object.class, Object.class, Object.class, Integer.class, Integer.class
+					};
+					public Class getColumnClass(int columnIndex) {
+						return columnTypes[columnIndex];
+					}
+					boolean[] columnEditables = new boolean[] {
+						false, false, false, false, false
+					};
+					public boolean isCellEditable(int row, int column) {
+						return columnEditables[column];
+					}
+				});
+				table_4.setBounds(253, 94, 200, 50);
+				panel1.add(table_4);
+				
+				table_5 = new JTable();
+				table_5.setModel(new DefaultTableModel(
+					new Object[][] {
+						{"Charlotte Hornets", "Boston Celtics", "Spectrum Center", new Integer(97), new Integer(89)},
+						{"Chicago Bulls", "Atlanta Hawks", "United Center", new Integer(104), new Integer(102)},
+						{"Brooklyn Nets", "Cleveland Cavaliers", "Barclays Center", new Integer(88), new Integer(91)},
+					},
+					new String[] {
+						"Etxea", "Kanpokoa", "Zelaia", "Etxeko puntuak", "Kanpoko puntuak"
+					}
+				) {
+					Class[] columnTypes = new Class[] {
+						Object.class, Object.class, Object.class, Integer.class, Integer.class
+					};
+					public Class getColumnClass(int columnIndex) {
+						return columnTypes[columnIndex];
+					}
+					boolean[] columnEditables = new boolean[] {
+						false, false, false, false, false
+					};
+					public boolean isCellEditable(int row, int column) {
+						return columnEditables[column];
+					}
+				});
+				table_5.setBounds(498, 94, 200, 50);
+				panel1.add(table_5);
+				
+				table_6 = new JTable();
+				table_6.setModel(new DefaultTableModel(
+					new Object[][] {
+						{"Boston Celtics", "Chicago Bulls", "TD Garden", new Integer(137), new Integer(146)},
+						{"Charlotte Hornets", "Brooklyn Nets", "Spectrum Center", new Integer(79), new Integer(103)},
+						{"Atlanta Hawks", "Cleveland Cavaliers", "State Farm Arena", new Integer(104), new Integer(112)},
+					},
+					new String[] {
+						"Etxea", "Kanpokoa", "Zelaia", "Etxeko puntuak", "Kanpoko puntuak"
+					}
+				) {
+					Class[] columnTypes = new Class[] {
+						Object.class, Object.class, Object.class, Integer.class, Integer.class
+					};
+					public Class getColumnClass(int columnIndex) {
+						return columnTypes[columnIndex];
+					}
+					boolean[] columnEditables = new boolean[] {
+						false, false, false, false, false
+					};
+					public boolean isCellEditable(int row, int column) {
+						return columnEditables[column];
+					}
+				});
+				table_6.setBounds(10, 177, 200, 50);
+				panel1.add(table_6);
+				
+				table_7 = new JTable();
+				table_7.setModel(new DefaultTableModel(
+					new Object[][] {
+						{"Chicago Bulls", "Boston Celtics", "United Center", new Integer(137), new Integer(146)},
+						{"Brooklyn Nets", "Charlotte Hornets", "Barclays Center", new Integer(79), new Integer(103)},
+						{"Cleveland Cavaliers", "Atlnata Hawks", "Rocket Mortgage FieldHouse", new Integer(104), new Integer(112)},
+					},
+					new String[] {
+						"Etxea", "Kanpokoa", "Zelaia", "Etxeko puntuak", "Kanpoko puntuak"
+					}
+				) {
+					Class[] columnTypes = new Class[] {
+						Object.class, Object.class, Object.class, Integer.class, Integer.class
+					};
+					public Class getColumnClass(int columnIndex) {
+						return columnTypes[columnIndex];
+					}
+					boolean[] columnEditables = new boolean[] {
+						false, false, false, false, false
+					};
+					public boolean isCellEditable(int row, int column) {
+						return columnEditables[column];
+					}
+				});
+				table_7.setBounds(253, 177, 200, 50);
+				panel1.add(table_7);
+				
+				table_8 = new JTable();
+				table_8.setModel(new DefaultTableModel(
+					new Object[][] {
+						{"Boston Celtics", "Brooklyn Nets", "TD Garden", new Integer(107), new Integer(116)},
+						{"Chicago Bulls", "Cleveland Cavaliers", "United Center", new Integer(99), new Integer(87)},
+						{"Charlotte Hornets ", "Atlanta Hawks", "Spectrum Center", new Integer(114), new Integer(119)},
+					},
+					new String[] {
+						"Etxea", "Kanpokoa", "Zelaia", "Etxeko puntuak", "Kanpoko puntuak"
+					}
+				) {
+					Class[] columnTypes = new Class[] {
+						Object.class, Object.class, Object.class, Integer.class, Integer.class
+					};
+					public Class getColumnClass(int columnIndex) {
+						return columnTypes[columnIndex];
+					}
+					boolean[] columnEditables = new boolean[] {
+						false, false, false, false, false
+					};
+					public boolean isCellEditable(int row, int column) {
+						return columnEditables[column];
+					}
+				});
+				table_8.setBounds(498, 177, 200, 50);
+				panel1.add(table_8);
+				
+				table_9 = new JTable();
+				table_9.setModel(new DefaultTableModel(
+					new Object[][] {
+						{"Brooklyn Nets ", "Boston Celtics", "Barclays Center", new Integer(101), new Integer(86)},
+						{"Cleveland Cavaliers", "Chicago Bulls", "Rocket Morgage FieldHouse", new Integer(107), new Integer(99)},
+						{"Atlanta Hawks", "Charlotte Hornets", "State Farm Arena", new Integer(87), new Integer(94)},
+					},
+					new String[] {
+						"Etxea", "Kanpokoa", "Zelaia", "Etxeko puntuak", "Kanpoko puntuak"
+					}
+				) {
+					Class[] columnTypes = new Class[] {
+						Object.class, Object.class, Object.class, Integer.class, Integer.class
+					};
+					public Class getColumnClass(int columnIndex) {
+						return columnTypes[columnIndex];
+					}
+					boolean[] columnEditables = new boolean[] {
+						false, false, false, false, false
+					};
+					public boolean isCellEditable(int row, int column) {
+						return columnEditables[column];
+					}
+				});
+				table_9.setBounds(253, 259, 200, 50);
+				panel1.add(table_9);
+				
+				panel1.setVisible(false);
+				
+				setLayout(null);
+				//DENBORALDI1 AMAIERA
 	}
 	
 	public void menu () {

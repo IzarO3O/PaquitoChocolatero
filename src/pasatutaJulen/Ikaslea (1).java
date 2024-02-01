@@ -1,4 +1,4 @@
-package pasatutaJulen;
+package ebaluazioa2.serializazioa;
 
 import java.io.Serializable;
 import java.util.Objects;
