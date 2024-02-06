@@ -41,19 +41,7 @@ public class Etxea extends JPanel {
 	void Base(){
 		setBackground(new Color(241, 251, 117));
 		setLayout(null);
-		comboBox.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (comboBox.getSelectedItem()=="22-23") {
-					JOptionPane.showMessageDialog(new JFrame(), "1 den","Error",JOptionPane.WARNING_MESSAGE);
-
-				}else if (comboBox.getSelectedItem()=="23-24") {
-					JOptionPane.showMessageDialog(new JFrame(), "2 den","Error",JOptionPane.WARNING_MESSAGE);
-
-				}
-			}
-		});
-		//NO ME SALE
-		//JComboBox comboBox = new JComboBox();
+		
 		comboBox.setBounds(429, 73, 179, 43);
 	    comboBox.addItem("22-23");
 	    comboBox.addItem("23-24");
@@ -108,6 +96,30 @@ public class Etxea extends JPanel {
 		lblNewLabel_5.setBounds(63, 265, 15, 13);
 		add(lblNewLabel_5);
 		
+		comboBox.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (comboBox.getSelectedItem()=="22-23") {
+					JOptionPane.showMessageDialog(new JFrame(), "1 den","Error",JOptionPane.WARNING_MESSAGE);
+					table.setModel(new DefaultTableModel (
+							new Object[][]  {
+								{null, null, null},
+								{null, null, null},
+								{null, null, null},
+								{null, null, null},
+								{null, null, null},
+								{null, null, null},
+							},
+							new String[] {
+									"Taldea", "IP", "GP"
+								}
+							));
+
+				}else if (comboBox.getSelectedItem()=="23-24") {
+					JOptionPane.showMessageDialog(new JFrame(), "2 den","Error",JOptionPane.WARNING_MESSAGE);
+
+				}
+			}
+		});
 
 		}
 }

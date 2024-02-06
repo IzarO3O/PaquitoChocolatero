@@ -13,6 +13,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -30,6 +31,7 @@ public class Denboraldiak extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	private boolean jaur3 = false;
+	boolean bi = false;
 	public static DefaultListModel model ;
 	private JTable table;
 	private JTable table_1;
@@ -63,6 +65,32 @@ public class Denboraldiak extends JPanel {
 	private JTextField textField5;
 	private JButton btnNewButton_3;
 	private DefaultComboBoxModel comboBoxModel;
+	private DefaultComboBoxModel comboBoxModel1;
+	private DefaultComboBoxModel comboBoxModel2;
+	private DefaultComboBoxModel comboBoxModel3;
+	private DefaultComboBoxModel comboBoxModel4;
+	private DefaultComboBoxModel comboBoxModel5;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+	private JTextField textField_4;
+	private JTextField textField_5;
+	private JTextField textField_6;
+	public ArrayList den1[];
+	public ArrayList den1BC[];
+	public ArrayList den1BN[];
+	public ArrayList den1CB[];
+	public ArrayList den1CC[];
+	public ArrayList den1AH[];
+	public ArrayList den1CH[];
+
+	String A = null;
+	String B = null;
+	String C = null;
+	String D = null;
+	String E = null;
+	String F = null;
+
 	
 
 	/**
@@ -70,12 +98,80 @@ public class Denboraldiak extends JPanel {
 	 */
 	
 	public Denboraldiak() {
-		menu();
+		setLayout(null);
 		
+		/*JPanel panelki = new JPanel();
+		panelki.setBounds(32, 34, 306, 333);
+		add(panelki);
+		panelki.setLayout(null);
+		
+		JTextField textFieldki = new JTextField();
+		textFieldki.setEditable(false);
+		textFieldki.setBounds(21, 75, 109, 29);
+		panelki.add(textFieldki);
+		textFieldki.setColumns(10);
+		
+		JTextField textField_1ki = new JTextField();
+		textField_1ki.setColumns(10);
+		textField_1ki.setBounds(157, 75, 109, 29);
+		panelki.add(textField_1ki);
+		
+		JTextField textField_2ki = new JTextField();
+		textField_2ki.setColumns(10);
+		textField_2ki.setBounds(21, 155, 109, 29);
+		panelki.add(textField_2ki);
+		
+		JTextField textField_3ki = new JTextField();
+		textField_3ki.setColumns(10);
+		textField_3ki.setBounds(157, 155, 109, 29);
+		panelki.add(textField_3ki);
+		
+		JTextField textField_4ki = new JTextField();
+		textField_4ki.setColumns(10);
+		textField_4ki.setBounds(21, 231, 109, 29);
+		panelki.add(textField_4ki);
+		
+		JTextField textField_5ki = new JTextField();
+		textField_5ki.setColumns(10);
+		textField_5ki.setBounds(157, 231, 109, 29);
+		panelki.add(textField_5ki);
+		
+		
+		
+		JSpinner spinner = new JSpinner();
+		spinner.setBounds(51, 110, 41, 20);
+		panelki.add(spinner);
+		
+		JSpinner spinner_1 = new JSpinner();
+		spinner_1.setBounds(193, 110, 41, 20);
+		panelki.add(spinner_1);
+		
+		JSpinner spinner_2 = new JSpinner();
+		spinner_2.setBounds(51, 191, 41, 20);
+		panelki.add(spinner_2);
+		
+		JSpinner spinner_3 = new JSpinner();
+		spinner_3.setBounds(193, 190, 41, 20);
+		panelki.add(spinner_3);
+		
+		JSpinner spinner_4 = new JSpinner();
+		spinner_4.setBounds(51, 266, 41, 20);
+		panelki.add(spinner_4);
+		
+		JSpinner spinner_5 = new JSpinner();
+		spinner_5.setBounds(193, 266, 41, 20);
+		panelki.add(spinner_5);
+		
+		JButton btnNewButton_4 = new JButton("Gorde");
+		btnNewButton_4.setBounds(190, 296, 85, 27);
+		panelki.add(btnNewButton_4);
+		bigade();	*/
+		
+		menu();
 	}
 	
 	public void menu () {
-		
+			
 //DENB BERRI HASIERA
 		setBackground(new Color(255, 0, 128));
 		setLayout(null);
@@ -92,11 +188,6 @@ public class Denboraldiak extends JPanel {
 		panela.setBackground(new Color(255, 128, 192));
 		panela.setLayout(null);
 		
-		JPanel panelin = new JPanel();
-		panelin.setBounds(10, 10, 321, 353);
-		panel_2.add(panelin);
-		panelin.setBackground(new Color(231, 152, 241));
-		panelin.setLayout(null);
 		
 		comboBoxModel = new DefaultComboBoxModel();
 		comboBoxModel.addElement("Boston Celtics");
@@ -105,7 +196,47 @@ public class Denboraldiak extends JPanel {
 		comboBoxModel.addElement("Cleveland Cavaliers");
 		comboBoxModel.addElement("Atlanta Hawks");
 		comboBoxModel.addElement("Charlotte Hornets");
-
+		
+		comboBoxModel1 = new DefaultComboBoxModel();
+		comboBoxModel1.addElement("Boston Celtics");
+		comboBoxModel1.addElement("Brooklyn Nets");
+		comboBoxModel1.addElement("Chicago Bulls");
+		comboBoxModel1.addElement("Cleveland Cavaliers");
+		comboBoxModel1.addElement("Atlanta Hawks");
+		comboBoxModel1.addElement("Charlotte Hornets");
+		
+		comboBoxModel2 = new DefaultComboBoxModel();
+		comboBoxModel2.addElement("Boston Celtics");
+		comboBoxModel2.addElement("Brooklyn Nets");
+		comboBoxModel2.addElement("Chicago Bulls");
+		comboBoxModel2.addElement("Cleveland Cavaliers");
+		comboBoxModel2.addElement("Atlanta Hawks");
+		comboBoxModel2.addElement("Charlotte Hornets");
+		
+		comboBoxModel3 = new DefaultComboBoxModel();
+		comboBoxModel3.addElement("Boston Celtics");
+		comboBoxModel3.addElement("Brooklyn Nets");
+		comboBoxModel3.addElement("Chicago Bulls");
+		comboBoxModel3.addElement("Cleveland Cavaliers");
+		comboBoxModel3.addElement("Atlanta Hawks");
+		comboBoxModel3.addElement("Charlotte Hornets");
+		
+		comboBoxModel4 = new DefaultComboBoxModel();
+		comboBoxModel4.addElement("Boston Celtics");
+		comboBoxModel4.addElement("Brooklyn Nets");
+		comboBoxModel4.addElement("Chicago Bulls");
+		comboBoxModel4.addElement("Cleveland Cavaliers");
+		comboBoxModel4.addElement("Atlanta Hawks");
+		comboBoxModel4.addElement("Charlotte Hornets");
+		
+		comboBoxModel5 = new DefaultComboBoxModel();
+		comboBoxModel5.addElement("Boston Celtics");
+		comboBoxModel5.addElement("Brooklyn Nets");
+		comboBoxModel5.addElement("Chicago Bulls");
+		comboBoxModel5.addElement("Cleveland Cavaliers");
+		comboBoxModel5.addElement("Atlanta Hawks");
+		comboBoxModel5.addElement("Charlotte Hornets");
+		
 		
 		JComboBox comboBox = new JComboBox();
 		comboBox.setBounds(16, 59, 114, 21);
@@ -115,27 +246,27 @@ public class Denboraldiak extends JPanel {
 		JComboBox comboBox_1 = new JComboBox();
 		comboBox_1.setBounds(150, 59, 114, 21);
 		panela.add(comboBox_1);
-		comboBox_1.setModel(comboBoxModel);
+		comboBox_1.setModel(comboBoxModel1);
 		
 		JComboBox comboBox_2 = new JComboBox();
 		comboBox_2.setBounds(16, 121, 114, 21);
 		panela.add(comboBox_2);
-		comboBox_2.setModel(comboBoxModel);
+		comboBox_2.setModel(comboBoxModel2);
 		
 		JComboBox comboBox_3 = new JComboBox();
 		comboBox_3.setBounds(150, 121, 114, 21);
 		panela.add(comboBox_3);
-		comboBox_3.setModel(comboBoxModel);
+		comboBox_3.setModel(comboBoxModel3);
 		
 		JComboBox comboBox_4 = new JComboBox();
 		comboBox_4.setBounds(16, 183, 114, 21);
 		panela.add(comboBox_4);
-		comboBox_4.setModel(comboBoxModel);
+		comboBox_4.setModel(comboBoxModel4);
 		
 		JComboBox comboBox_5 = new JComboBox();
 		comboBox_5.setBounds(150, 183, 114, 21);
 		panela.add(comboBox_5);
-		comboBox_5.setModel(comboBoxModel);
+		comboBox_5.setModel(comboBoxModel5);
 		
 		JSpinner spinner = new JSpinner();
 		spinner.setBounds(46, 90, 45, 21);
@@ -181,11 +312,11 @@ public class Denboraldiak extends JPanel {
 		JButton btnNewButton_2_1 = new JButton("Gorde");
 		btnNewButton_2_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (comboBox.getSelectedIndex()==comboBox_1.getSelectedIndex()||comboBox.getSelectedIndex()==comboBox_2.getSelectedIndex()||comboBox.getSelectedIndex()==comboBox_3.getSelectedIndex()||comboBox.getSelectedIndex()==comboBox_4.getSelectedIndex()||comboBox.getSelectedIndex()==comboBox_5.getSelectedIndex()||
-						comboBox_1.getSelectedIndex()==comboBox_2.getSelectedIndex()||comboBox_1.getSelectedIndex()==comboBox_3.getSelectedIndex()||comboBox_1.getSelectedIndex()==comboBox_4.getSelectedIndex()||comboBox_1.getSelectedIndex()==comboBox_5.getSelectedIndex()||
-						comboBox_2.getSelectedIndex()==comboBox_3.getSelectedIndex()||comboBox_2.getSelectedIndex()==comboBox_4.getSelectedIndex()||comboBox_2.getSelectedIndex()==comboBox_4.getSelectedIndex()||
-						comboBox_3.getSelectedIndex()==comboBox_4.getSelectedIndex()||comboBox_3.getSelectedIndex()==comboBox_5.getSelectedIndex()||
-						comboBox_4.getSelectedIndex()==comboBox_5.getSelectedIndex()) {
+				if (comboBoxModel.getSelectedItem()==comboBoxModel1.getSelectedItem()||comboBoxModel.getSelectedItem()==comboBoxModel2.getSelectedItem()||comboBoxModel.getSelectedItem()==comboBoxModel3.getSelectedItem()||comboBoxModel.getSelectedItem()==comboBoxModel4.getSelectedItem()||comboBoxModel.getSelectedItem()==comboBoxModel5.getSelectedItem()||
+						comboBoxModel1.getSelectedItem()==comboBoxModel2.getSelectedItem()||comboBoxModel1.getSelectedItem()==comboBoxModel3.getSelectedItem()||comboBox_1.getSelectedItem()==comboBox_4.getSelectedItem()||comboBox_1.getSelectedItem()==comboBox_5.getSelectedItem()||
+						comboBox_2.getSelectedItem()==comboBox_3.getSelectedItem()||comboBox_2.getSelectedItem()==comboBox_4.getSelectedItem()||comboBox_2.getSelectedItem()==comboBox_4.getSelectedItem()||
+						comboBox_3.getSelectedItem()==comboBox_4.getSelectedItem()||comboBox_3.getSelectedItem()==comboBox_5.getSelectedItem()||
+						comboBox_4.getSelectedItem()==comboBox_5.getSelectedItem()) {
 					JOptionPane.showMessageDialog(new JFrame(), "Ezin dira taldeak errepiaktu","Error",JOptionPane.WARNING_MESSAGE);
 				} else {
 				int puntu0=(Integer) spinner.getValue();
@@ -216,98 +347,53 @@ public class Denboraldiak extends JPanel {
 					spinner_4.setEnabled(false);
 					spinner_5.setEnabled(false);
 
+					ArrayList<Object> den1BC = new ArrayList<Object>() ;
+					den1BC.add("Boston Celtics");
+					den1BC.add(bci1);
+					den1BC.add(bcg1);
+					
+					ArrayList<Object> den1BN = new ArrayList<Object>() ;
+					den1BC.add("Brooklyn Nets");
+					den1BC.add(bni1);
+					den1BC.add(bng1);
+					
+					ArrayList<Object> den1CB = new ArrayList<Object>() ;
+					den1BC.add("Chicago Bulls");
+					den1BC.add(cbi1);
+					den1BC.add(cbg1);
+					
+					ArrayList<Object> den1CC = new ArrayList<Object>() ;
+					den1BC.add("Cleveland Cavaliers");
+					den1BC.add(cci1);
+					den1BC.add(ccg1);
+					
+					ArrayList<Object> den1AH = new ArrayList<Object>() ;
+					den1BC.add("Atlanta Hawks");
+					den1BC.add(ahi1);
+					den1BC.add(ahg1);
 
-
+					ArrayList<Object> den1CH = new ArrayList<Object>() ;
+					den1BC.add("Charlotte Hornets");
+					den1BC.add(chi1);
+					den1BC.add(chg1);
+					
+					den1[1].add(den1BC);
+					den1[2].add(den1BN);
+					den1[3].add(den1CB);
+					den1[4].add(den1CC);
+					den1[5].add(den1AH);
+					den1[6].add(den1CH);
+					
 				}
 				}
 			}
 		});
-		// NO ME SALE
-		/*Object[] tal =comboBox.getSelectedObjects();
-		Object item = comboBox.getSelectedItem();
-		String value = ((ComboItem)item).getValue();
-		Object[] tal1 =comboBox_1.getSelectedObjects();
-		Object[] tal2 =comboBox_2.getSelectedObjects();
-		Object[] tal3 =comboBox_3.getSelectedObjects();
-		Object[] tal4 =comboBox_4.getSelectedObjects();
-		Object[] tal5 =comboBox_5.getSelectedObjects();
-		*/
 		
-		
-		textField = new JTextField();
-		textField.setEditable(false);
-		textField.setBounds(16, 59, 114, 21);
-		panelin.add(textField);
-		textField.setColumns(10);
-		
-		textField1 = new JTextField();
-		textField1.setEditable(false);
-		textField1.setBounds(150, 59, 114, 21);
-		panelin.add(textField1);
-		textField1.setColumns(10);
-		
-		textField2 = new JTextField((String) comboBox_3.getSelectedItem());
-		textField2.setEditable(false);
-		textField2.setBounds(16, 121, 114, 21);
-		panelin.add(textField2);
-		textField2.setColumns(10);
-		
-		textField3 = new JTextField((String) comboBox_2.getSelectedItem());
-		textField3.setEditable(false);
-		textField3.setBounds(150, 121, 114, 21);
-		panelin.add(textField3);
-		textField3.setColumns(10);
-		
-		textField4 = new JTextField((String) comboBox_5.getSelectedItem());
-		textField4.setEditable(false);
-		textField4.setBounds(16, 183, 114, 21);
-		panelin.add(textField4);
-		textField4.setColumns(10);
-		
-		textField5 = new JTextField((String) comboBox_4.getSelectedItem());
-		textField5.setEditable(false);
-		textField5.setBounds(150, 183, 114, 21);
-		panelin.add(textField5);
-		textField5.setColumns(10);
-		
-		JSpinner spinnerb = new JSpinner();
-		spinner.setBounds(46, 90, 45, 21);
-		panela.add(spinner);
-		
-		JSpinner spinner_1b = new JSpinner();
-		spinner_1.setBounds(181, 90, 45, 21);
-		panela.add(spinner_1);
-		
-		JSpinner spinner_2b = new JSpinner();
-		spinner_2.setBounds(46, 152, 45, 21);
-		panela.add(spinner_2);
-		
-		JSpinner spinner_3b = new JSpinner();
-		spinner_3.setBounds(181, 152, 45, 21);
-		panela.add(spinner_3);
-		
-		JSpinner spinner_4b = new JSpinner();
-		spinner_4.setBounds(46, 220, 45, 21);
-		panela.add(spinner_4);
-		
-		JSpinner spinner_5b = new JSpinner();
-		spinner_5.setBounds(181, 220, 45, 21);
-		panela.add(spinner_5);
-		
-		
-		comboBox.addActionListener(new ActionListener() {
-
-	        @Override
-	        public void actionPerformed(ActionEvent e){
-	            {
-	                
-	      }
-	    }
-	}); 
 		
 		JButton btnNewButton_2_1b = new JButton("Gorde");
 		btnNewButton_2_1b.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				if (comboBox.getSelectedIndex()==comboBox_1.getSelectedIndex()||comboBox.getSelectedIndex()==comboBox_2.getSelectedIndex()||comboBox.getSelectedIndex()==comboBox_3.getSelectedIndex()||comboBox.getSelectedIndex()==comboBox_4.getSelectedIndex()||comboBox.getSelectedIndex()==comboBox_5.getSelectedIndex()||
 						comboBox_1.getSelectedIndex()==comboBox_2.getSelectedIndex()||comboBox_1.getSelectedIndex()==comboBox_3.getSelectedIndex()||comboBox_1.getSelectedIndex()==comboBox_4.getSelectedIndex()||comboBox_1.getSelectedIndex()==comboBox_5.getSelectedIndex()||
 						comboBox_2.getSelectedIndex()==comboBox_3.getSelectedIndex()||comboBox_2.getSelectedIndex()==comboBox_4.getSelectedIndex()||comboBox_2.getSelectedIndex()==comboBox_4.getSelectedIndex()||
@@ -341,8 +427,13 @@ public class Denboraldiak extends JPanel {
 					spinner_3.setEnabled(false);
 					spinner_4.setEnabled(false);
 					spinner_5.setEnabled(false);
-
-
+					
+					String A = (String) comboBox.getSelectedItem();
+					String B = (String) comboBox_1.getSelectedItem();
+					String C = (String) comboBox_2.getSelectedItem();
+					String D = (String) comboBox_3.getSelectedItem();
+					String E = (String) comboBox_4.getSelectedItem();
+					String F = (String) comboBox_5.getSelectedItem();
 
 				}
 				}
@@ -363,24 +454,65 @@ public class Denboraldiak extends JPanel {
 		panel_1.setLayout(null);
 		
 		JComboBox comboBox_6 = new JComboBox();
-		comboBox_6.setModel(new DefaultComboBoxModel(new String[] {"1. Jaudunaldia", "2. Jaudunaldia", "3. Jaudunaldia", "4. Jaudunaldia", "5. Jaudunaldia", "6. Jaudunaldia", "7. Jaudunaldia", "8. Jaudunaldia", "9. Jaudunaldia", "10. Jaudunaldia"}));
+		comboBox_6.setModel(new DefaultComboBoxModel(new String[] {"1. Jaurdunaldia", "2. Jaurdunaldia", "3. Jaurdunaldia", "4. Jaurdunaldia", "5. Jaurdunaldia", "6. Jaurdunaldia", "7. Jaurdunaldia", "8. Jaurdunaldia", "9. Jaurdunaldia", "10. Jaurdunaldia"}));
 		comboBox_6.setBounds(76, 61, 200, 50);
 		panel_1.add(comboBox_6);
 		
 		Button button = new Button("Aukeratu");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			if (comboBox_6.getSelectedItem()=="1. Jaudunaldia") {
-				panela.setVisible(true);
 				
+			if (comboBox_6.getSelectedItem()=="1. Jaurdunaldia") {
+				
+				comboBox.setSelectedItem(A);
+				comboBox_1.setSelectedItem(B);
+				comboBox_2.setSelectedItem(C);
+				comboBox_3.setSelectedItem(D);
+				comboBox_4.setSelectedItem(E);
+				comboBox_5.setSelectedItem(F);
 			}
 				
-			if (comboBox_6.getSelectedItem()=="2. Jaudunaldia"&&jaur3==false||comboBox_6.getSelectedItem()=="3. Jaudunaldia"&&jaur3==false||comboBox_6.getSelectedItem()=="4. Jaudunaldia"&&jaur3==false||comboBox_6.getSelectedItem()=="5. Jaudunaldia"&&jaur3==false||comboBox_6.getSelectedItem()=="6. Jaudunaldia"&&jaur3==false||comboBox_6.getSelectedItem()=="7. Jaudunaldia"&&jaur3==false||comboBox_6.getSelectedItem()=="8. Jaudunaldia"&&jaur3==false||comboBox_6.getSelectedItem()=="9. Jaudunaldia"&&jaur3==false||comboBox_6.getSelectedItem()=="10. Jaudunaldia"&&jaur3==false) {
+			if (comboBox_6.getSelectedItem()=="2. Jaurdunaldia"&&jaur3==false||comboBox_6.getSelectedItem()=="3. Jaurdunaldia"&&jaur3==false||comboBox_6.getSelectedItem()=="4. Jaurdunaldia"&&jaur3==false||comboBox_6.getSelectedItem()=="5. Jaurdunaldia"&&jaur3==false||comboBox_6.getSelectedItem()=="6. Jaurdunaldia"&&jaur3==false||comboBox_6.getSelectedItem()=="7. Jaurdunaldia"&&jaur3==false||comboBox_6.getSelectedItem()=="8. Jaurdunaldia"&&jaur3==false||comboBox_6.getSelectedItem()=="9. Jaurdunaldia"&&jaur3==false||comboBox_6.getSelectedItem()=="10. Jaurdunaldia"&&jaur3==false) {
 				JOptionPane.showMessageDialog(new JFrame(), "Lehenengo jaurdunaldua amaitu behar duzu","Error",JOptionPane.WARNING_MESSAGE);
 
-			}else if (comboBox_6.getSelectedItem()=="2. Jaudunaldia"&&jaur3==true) {
-				panelin.setVisible(true);
-				panela.setVisible(false);
+			}else if (comboBox_6.getSelectedItem()=="2. Jaurdunaldia"&&jaur3==true) {
+				
+				boolean bi = true;
+				
+				comboBox.setSelectedItem(B);
+				comboBox_1.setSelectedItem(A);
+				comboBox_2.setSelectedItem(D);
+				comboBox_3.setSelectedItem(C);
+				comboBox_4.setSelectedItem(F);
+				comboBox_5.setSelectedItem(E);
+
+				spinner.setEnabled(true);
+				spinner_1.setEnabled(true);
+				spinner_2.setEnabled(true);
+				spinner_3.setEnabled(true);
+				spinner_4.setEnabled(true);
+				spinner_5.setEnabled(true);
+				
+				if (comboBox_6.getSelectedItem()=="3. Jaurdunaldia"&&bi==true) {
+				comboBox.setSelectedItem(B);
+				comboBox_1.setSelectedItem(E);
+				comboBox_2.setSelectedItem(D);
+				comboBox_3.setSelectedItem(A);
+				comboBox_4.setSelectedItem(F);
+				comboBox_5.setSelectedItem(C);
+
+				spinner.setEnabled(true);
+				spinner_1.setEnabled(true);
+				spinner_2.setEnabled(true);
+				spinner_3.setEnabled(true);
+				spinner_4.setEnabled(true);
+				spinner_5.setEnabled(true);
+				}
+			}else if (comboBox_6.getSelectedItem()!="2. Jaurdunaldia"&&bi==false) {
+				JOptionPane.showMessageDialog(new JFrame(), "Pasatu 2. Jaurdunalditik lehenengo","Error",JOptionPane.WARNING_MESSAGE);
+
+			} else {
+				JOptionPane.showMessageDialog(new JFrame(), "ajf","Error",JOptionPane.WARNING_MESSAGE);
 
 			}
 			}
@@ -399,319 +531,224 @@ public class Denboraldiak extends JPanel {
 		table = new JTable();
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{"Boston Celtics", "Cleveland Cavaliers", "TD Garden", new Integer(127), new Integer(112)},
-				{"Broolyn Nets", "Atlanta Hawks", "Barclays Center", new Integer(97), new Integer(102)},
-				{"Chicago Bulls", "Charlotte Hornets", "United Center", new Integer(114), new Integer(87)},
+				{"Boston Celtics", "Cleveland Cavaliers", new Integer(127), new Integer(112)},
+				{"Broolyn Nets", "Atlanta Hawks", new Integer(97), new Integer(102)},
+				{"Chicago Bulls", "Charlotte Hornets", new Integer(114), new Integer(87)},
 			},
 			new String[] {
-				"Etxea", "Kanpokoa", "Zelaia", "Etxeko puntuak", "Kanpoko puntuak"
+				"Etxea", "Kanpokoa", "Etxeko puntuak", "Kanpoko puntuak"
 			}
-		) {
-			/**
-			 * 
-			 */
-			private static final long serialVersionUID = 1L;
-			Class[] columnTypes = new Class[] {
-				Object.class, Object.class, Object.class, Integer.class, Integer.class
-			};
-			public Class getColumnClass(int columnIndex) {
-				return columnTypes[columnIndex];
-			}
-		});
-		
-		bci1 = bci1+1; ccg1=ccg1+1;bng1=bng1+1; ahi1=ahi1+1; cbi1=cbi1+1;chg1=chg1+1;
-		
-		
+		));
 		table.getColumnModel().getColumn(0).setPreferredWidth(84);
 		table.getColumnModel().getColumn(1).setPreferredWidth(84);
+		table.getColumnModel().getColumn(2).setPreferredWidth(28);
 		table.getColumnModel().getColumn(3).setPreferredWidth(28);
-		table.getColumnModel().getColumn(4).setPreferredWidth(28);
+		
+		bci1 = bci1+1; ccg1=ccg1+1;bng1=bng1+1; ahi1=ahi1+1; cbi1=cbi1+1;chg1=chg1+1;
 		table.setBounds(10, 10, 233, 50);
 		panel1.add(table);
 		
 		table_1 = new JTable();
 		table_1.setModel(new DefaultTableModel(
 			new Object[][] {
-				{"Cleveland Cavaliers", "Boston Celtics", "Rocket Mortgage FieldHouse", new Integer(107), new Integer(121)},
-				{"Atlanta Hawks", "Brooklyn Nets", "State Farm Arena", new Integer(87), new Integer(92)},
-				{"Charlotte Hornets", "Chicago Bulls", "Spectrum Center", new Integer(97), new Integer(101)},
+				{"Cleveland Cavaliers", "Boston Celtics", new Integer(107), new Integer(121)},
+				{"Atlanta Hawks", "Brooklyn Nets", new Integer(87), new Integer(92)},
+				{"Charlotte Hornets", "Chicago Bulls", new Integer(97), new Integer(101)},
 			},
 			new String[] {
-				"Etxea", "Kanpokoa", "Zelaia", "Etxeko puntuak", "Kanpoko puntuak"
+				"Etxea", "Kanpokoa", "Etxeko puntuak", "Kanpoko puntuak"
 			}
-		) {
-			/**
-			 * 
-			 */
-			private static final long serialVersionUID = 1L;
-			Class[] columnTypes = new Class[] {
-				Object.class, Object.class, Object.class, Integer.class, Integer.class
-			};
-			public Class getColumnClass(int columnIndex) {
-				return columnTypes[columnIndex];
-			}
-		});
-		
-		ccg1= ccg1+1; bci1=bci1+1; ahg1= ahg1+1; bni1=bni1+1; chg1=chg1+1; cbi1=cbi1+1;
-				
+		));
 		table_1.getColumnModel().getColumn(0).setPreferredWidth(85);
 		table_1.getColumnModel().getColumn(1).setPreferredWidth(85);
+		table_1.getColumnModel().getColumn(2).setPreferredWidth(28);
 		table_1.getColumnModel().getColumn(3).setPreferredWidth(28);
-		table_1.getColumnModel().getColumn(4).setPreferredWidth(28);
+		
+		ccg1= ccg1+1; bci1=bci1+1; ahg1= ahg1+1; bni1=bni1+1; chg1=chg1+1; cbi1=cbi1+1;
 		table_1.setBounds(253, 10, 233, 50);
 		panel1.add(table_1);
 		
 		table_2 = new JTable();
 		table_2.setModel(new DefaultTableModel(
 			new Object[][] {
-				{"Boston Celtics", "Atlanta Hawks", "TD Garden", new Integer(101), new Integer(107)},
-				{"Cleveland Cavaliers", "Charlotte Hornets", "Rocket Mortgage FieldHouse", new Integer(96), new Integer(81)},
-				{"Brooklyn Nets", "Chicago Bulls", "Barclays Center", new Integer(97), new Integer(98)},
+				{"Boston Celtics", "Atlanta Hawks", new Integer(101), new Integer(107)},
+				{"Cleveland Cavaliers", "Charlotte Hornets", new Integer(96), new Integer(81)},
+				{"Brooklyn Nets", "Chicago Bulls", new Integer(97), new Integer(98)},
 			},
 			new String[] {
-				"Etxea", "Kanpokoa", "Zelaia", "Etxeko puntuak", "Kanpoko puntuak"
+				"Etxea", "Kanpokoa", "Etxeko puntuak", "Kanpoko puntuak"
 			}
-		) {
-			/**
-			 * 
-			 */
-			private static final long serialVersionUID = 1L;
-			Class[] columnTypes = new Class[] {
-				Object.class, Object.class, Object.class, Integer.class, Integer.class
-			};
-			public Class getColumnClass(int columnIndex) {
-				return columnTypes[columnIndex];
-			}
-		});
-			
-		bcg1=bcg1+1; ahi1=ahi1+1; cci1=cci1+1; chg1=chg1+1; bng1=bng1+1; cbi1=cbi1+1;
-		
+		));
 		table_2.getColumnModel().getColumn(0).setPreferredWidth(85);
 		table_2.getColumnModel().getColumn(1).setPreferredWidth(85);
+		table_2.getColumnModel().getColumn(2).setPreferredWidth(28);
 		table_2.getColumnModel().getColumn(3).setPreferredWidth(28);
-		table_2.getColumnModel().getColumn(4).setPreferredWidth(28);
+			
+		bcg1=bcg1+1; ahi1=ahi1+1; cci1=cci1+1; chg1=chg1+1; bng1=bng1+1; cbi1=cbi1+1;
 		table_2.setBounds(498, 10, 200, 50);
 		panel1.add(table_2);
 		
 		table_3 = new JTable();
 		table_3.setModel(new DefaultTableModel(
 			new Object[][] {
-				{"Atlanta Hawks", "Boston Celtics", "State Farm Arena", new Integer(88), new Integer(102)},
-				{"Charlotte Hornets", "Cleveland Cavaliers", "Spectrum Center", new Integer(90), new Integer(79)},
-				{"Chicago Bulls", "Brooklyn Nets", "United Center", new Integer(102), new Integer(99)},
+				{"Atlanta Hawks", "Boston Celtics", new Integer(88), new Integer(102)},
+				{"Charlotte Hornets", "Cleveland Cavaliers", new Integer(90), new Integer(79)},
+				{"Chicago Bulls", "Brooklyn Nets", new Integer(102), new Integer(99)},
 			},
 			new String[] {
-				"Etxea", "Kanpokoa", "Zelaia", "Etxeko puntuak", "Kanpoko puntuak"
+				"Etxea", "Kanpokoa", "Etxeko puntuak", "Kanpoko puntuak"
 			}
-		) {
-			/**
-			 * 
-			 */
-			private static final long serialVersionUID = 1L;
-			Class[] columnTypes = new Class[] {
-				Object.class, Object.class, Object.class, Integer.class, Integer.class
-			};
-			public Class getColumnClass(int columnIndex) {
-				return columnTypes[columnIndex];
-			}
-		});
-		
-		ahg1=ahg1+1; bci1=bci1+1;chi1=chi1+1; ccg1=ccg1+1;cbi1=cbi1+1;bng1=bng1+1;
-		
+		));
 		table_3.getColumnModel().getColumn(0).setPreferredWidth(84);
 		table_3.getColumnModel().getColumn(1).setPreferredWidth(84);
+		table_3.getColumnModel().getColumn(2).setPreferredWidth(28);
 		table_3.getColumnModel().getColumn(3).setPreferredWidth(28);
-		table_3.getColumnModel().getColumn(4).setPreferredWidth(28);
+		
+		ahg1=ahg1+1; bci1=bci1+1;chi1=chi1+1; ccg1=ccg1+1;cbi1=cbi1+1;bng1=bng1+1;
 		table_3.setBounds(10, 94, 200, 50);
 		panel1.add(table_3);
 		
 		table_4 = new JTable();
 		table_4.setModel(new DefaultTableModel(
 			new Object[][] {
-				{"Boston Celtics", "Charlotte Hornets", "TD Garden", new Integer(101), new Integer(107)},
-				{"Atlanta Hawks", "Chicago Bulls ", "State Farm Arena", new Integer(96), new Integer(81)},
-				{"Cleveland Cavaliers", "Brooklyn Nets", "Rocket Mortgage FieldHouse", new Integer(97), new Integer(98)},
+				{"Boston Celtics", "Charlotte Hornets", new Integer(101), new Integer(107)},
+				{"Atlanta Hawks", "Chicago Bulls ", new Integer(96), new Integer(81)},
+				{"Cleveland Cavaliers", "Brooklyn Nets", new Integer(97), new Integer(98)},
 			},
 			new String[] {
-				"Etxea", "Kanpokoa", "Zelaia", "Etxeko puntuak", "Kanpoko puntuak"
+				"Etxea", "Kanpokoa", "Etxeko puntuak", "Kanpoko puntuak"
 			}
-		) {
-			/**
-			 * 
-			 */
-			private static final long serialVersionUID = 1L;
-			Class[] columnTypes = new Class[] {
-				Object.class, Object.class, Object.class, Integer.class, Integer.class
-			};
-			public Class getColumnClass(int columnIndex) {
-				return columnTypes[columnIndex];
-			}
-		});
-		
-		bcg1=bcg1+1; chi1=chi1+1; ahi1=ahi1+1; cbg1=cbg1+1;ccg1=ccg1+1;bni1=bni1+1;
-		
+		));
 		table_4.getColumnModel().getColumn(0).setPreferredWidth(85);
 		table_4.getColumnModel().getColumn(1).setPreferredWidth(85);
+		table_4.getColumnModel().getColumn(2).setPreferredWidth(28);
 		table_4.getColumnModel().getColumn(3).setPreferredWidth(28);
-		table_4.getColumnModel().getColumn(4).setPreferredWidth(28);
+		
+		bcg1=bcg1+1; chi1=chi1+1; ahi1=ahi1+1; cbg1=cbg1+1;ccg1=ccg1+1;bni1=bni1+1;
 		table_4.setBounds(253, 94, 200, 50);
 		panel1.add(table_4);
 		
 		table_5 = new JTable();
 		table_5.setModel(new DefaultTableModel(
 			new Object[][] {
-				{"Charlotte Hornets", "Boston Celtics", "Spectrum Center", new Integer(97), new Integer(89)},
-				{"Chicago Bulls", "Atlanta Hawks", "United Center", new Integer(104), new Integer(102)},
-				{"Brooklyn Nets", "Cleveland Cavaliers", "Barclays Center", new Integer(88), new Integer(91)},
+				{"Charlotte Hornets", "Boston Celtics", new Integer(97), new Integer(89)},
+				{"Chicago Bulls", "Atlanta Hawks", new Integer(104), new Integer(102)},
+				{"Brooklyn Nets", "Cleveland Cavaliers", new Integer(88), new Integer(91)},
 			},
 			new String[] {
-				"Etxea", "Kanpokoa", "Zelaia", "Etxeko puntuak", "Kanpoko puntuak"
+				"Etxea", "Kanpokoa", "Etxeko puntuak", "Kanpoko puntuak"
 			}
-		) {
-			/**
-			 * 
-			 */
-			private static final long serialVersionUID = 1L;
-			Class[] columnTypes = new Class[] {
-				Object.class, Object.class, Object.class, Integer.class, Integer.class
-			};
-			public Class getColumnClass(int columnIndex) {
-				return columnTypes[columnIndex];
-			}
-		});
-		
-		chi1=chi1+1;bcg1=bcg1+1;cbi1=cbi1+1; ahg1=ahg1+1; bng1=bng1+1; cci1=cci1+1;
-		
+		));
 		table_5.getColumnModel().getColumn(0).setPreferredWidth(85);
 		table_5.getColumnModel().getColumn(1).setPreferredWidth(85);
+		table_5.getColumnModel().getColumn(2).setPreferredWidth(28);
 		table_5.getColumnModel().getColumn(3).setPreferredWidth(28);
-		table_5.getColumnModel().getColumn(4).setPreferredWidth(28);
+		
+		chi1=chi1+1;bcg1=bcg1+1;cbi1=cbi1+1; ahg1=ahg1+1; bng1=bng1+1; cci1=cci1+1;
 		table_5.setBounds(498, 94, 200, 50);
 		panel1.add(table_5);
 		
 		table_6 = new JTable();
 		table_6.setModel(new DefaultTableModel(
 			new Object[][] {
-				{"Boston Celtics", "Chicago Bulls", "TD Garden", new Integer(137), new Integer(146)},
-				{"Charlotte Hornets", "Brooklyn Nets", "Spectrum Center", new Integer(79), new Integer(103)},
-				{"Atlanta Hawks", "Cleveland Cavaliers", "State Farm Arena", new Integer(104), new Integer(112)},
+				{"Boston Celtics", "Chicago Bulls", new Integer(137), new Integer(146)},
+				{"Charlotte Hornets", "Brooklyn Nets", new Integer(79), new Integer(103)},
+				{"Atlanta Hawks", "Cleveland Cavaliers", new Integer(104), new Integer(112)},
 			},
 			new String[] {
-				"Etxea", "Kanpokoa", "Zelaia", "Etxeko puntuak", "Kanpoko puntuak"
+				"Etxea", "Kanpokoa", "Etxeko puntuak", "Kanpoko puntuak"
 			}
-		) {
-			/**
-			 * 
-			 */
-			private static final long serialVersionUID = 1L;
-			Class[] columnTypes = new Class[] {
-				Object.class, Object.class, Object.class, Integer.class, Integer.class
-			};
-			public Class getColumnClass(int columnIndex) {
-				return columnTypes[columnIndex];
-			}
-			
-		});
-		
-		bcg1=bcg1+1;cbi1=cbi1+1; chg1=chg1+1;bni1=bni1+1;ahg1=ahg1+1;cci1=cci1+1;
-		
+		));
 		table_6.getColumnModel().getColumn(0).setPreferredWidth(84);
 		table_6.getColumnModel().getColumn(1).setPreferredWidth(84);
+		table_6.getColumnModel().getColumn(2).setPreferredWidth(28);
 		table_6.getColumnModel().getColumn(3).setPreferredWidth(28);
-		table_6.getColumnModel().getColumn(4).setPreferredWidth(28);
+		
+		bcg1=bcg1+1;cbi1=cbi1+1; chg1=chg1+1;bni1=bni1+1;ahg1=ahg1+1;cci1=cci1+1;
 		table_6.setBounds(10, 177, 200, 50);
 		panel1.add(table_6);
 		
 		table_7 = new JTable();
 		table_7.setModel(new DefaultTableModel(
 			new Object[][] {
-				{"Chicago Bulls", "Boston Celtics", "United Center", new Integer(137), new Integer(146)},
-				{"Brooklyn Nets", "Charlotte Hornets", "Barclays Center", new Integer(79), new Integer(103)},
-				{"Cleveland Cavaliers", "Atlnata Hawks", "Rocket Mortgage FieldHouse", new Integer(104), new Integer(112)},
+				{"Chicago Bulls", "Boston Celtics", new Integer(137), new Integer(146)},
+				{"Brooklyn Nets", "Charlotte Hornets", new Integer(79), new Integer(103)},
+				{"Cleveland Cavaliers", "Atlnata Hawks", new Integer(104), new Integer(112)},
 			},
 			new String[] {
-				"Etxea", "Kanpokoa", "Zelaia", "Etxeko puntuak", "Kanpoko puntuak"
+				"Etxea", "Kanpokoa", "Etxeko puntuak", "Kanpoko puntuak"
 			}
-		) {
-			/**
-			 * 
-			 */
-			private static final long serialVersionUID = 1L;
-			Class[] columnTypes = new Class[] {
-				Object.class, Object.class, Object.class, Integer.class, Integer.class
-			};
-			public Class getColumnClass(int columnIndex) {
-				return columnTypes[columnIndex];
-			}
-		});
+		));
 		table_7.getColumnModel().getColumn(0).setPreferredWidth(85);
 		table_7.getColumnModel().getColumn(1).setPreferredWidth(85);
+		table_7.getColumnModel().getColumn(2).setPreferredWidth(28);
 		table_7.getColumnModel().getColumn(3).setPreferredWidth(28);
-		table_7.getColumnModel().getColumn(4).setPreferredWidth(28);
 		table_7.setBounds(253, 177, 200, 50);
 		panel1.add(table_7);
 			
 		table_8 = new JTable();
 		table_8.setModel(new DefaultTableModel(
 			new Object[][] {
-				{"Boston Celtics", "Brooklyn Nets", "TD Garden", new Integer(107), new Integer(116)},
-				{"Chicago Bulls", "Cleveland Cavaliers", "United Center", new Integer(99), new Integer(87)},
-				{"Charlotte Hornets ", "Atlanta Hawks", "Spectrum Center", new Integer(114), new Integer(119)},
+				{"Boston Celtics", "Brooklyn Nets", new Integer(107), new Integer(116)},
+				{"Chicago Bulls", "Cleveland Cavaliers", new Integer(99), new Integer(87)},
+				{"Charlotte Hornets ", "Atlanta Hawks", new Integer(114), new Integer(119)},
 			},
 			new String[] {
-				"Etxea", "Kanpokoa", "Zelaia", "Etxeko puntuak", "Kanpoko puntuak"
+				"Etxea", "Kanpokoa", "Etxeko puntuak", "Kanpoko puntuak"
 			}
 		) {
-			/**
-			 * 
-			 */
-			private static final long serialVersionUID = 1L;
 			Class[] columnTypes = new Class[] {
-				Object.class, Object.class, Object.class, Integer.class, Integer.class
-				};
+				Object.class, Object.class, Integer.class, Integer.class
+			};
 			public Class getColumnClass(int columnIndex) {
 				return columnTypes[columnIndex];
 			}
+			boolean[] columnEditables = new boolean[] {
+				true, true, false, false
+			};
+			public boolean isCellEditable(int row, int column) {
+				return columnEditables[column];
+			}
 		});
-			
-		bcg1=bcg1+1; bni1=bni1+1; cbi1=cbi1+1; ccg1=ccg1+1; chg1=chg1+1; ahi1=ahi1+1;
-			
 		table_8.getColumnModel().getColumn(0).setPreferredWidth(85);
 		table_8.getColumnModel().getColumn(1).setPreferredWidth(85);
+		table_8.getColumnModel().getColumn(2).setPreferredWidth(28);
 		table_8.getColumnModel().getColumn(3).setPreferredWidth(28);
-		table_8.getColumnModel().getColumn(4).setPreferredWidth(28);
+			
+		bcg1=bcg1+1; bni1=bni1+1; cbi1=cbi1+1; ccg1=ccg1+1; chg1=chg1+1; ahi1=ahi1+1;
 		table_8.setBounds(498, 177, 200, 50);
 		panel1.add(table_8);
 			
 		table_9 = new JTable();
 		table_9.setModel(new DefaultTableModel(
 			new Object[][] {
-				{"Brooklyn Nets ", "Boston Celtics", "Barclays Center", new Integer(101), new Integer(86)},
-				{"Cleveland Cavaliers", "Chicago Bulls", "Rocket Morgage FieldHouse", new Integer(107), new Integer(99)},
-				{"Atlanta Hawks", "Charlotte Hornets", "State Farm Arena", new Integer(87), new Integer(94)},
-				},
+				{"Brooklyn Nets ", "Boston Celtics", new Integer(101), new Integer(86)},
+				{"Cleveland Cavaliers", "Chicago Bulls", new Integer(107), new Integer(99)},
+				{"Atlanta Hawks", "Charlotte Hornets", new Integer(87), new Integer(94)},
+			},
 			new String[] {
-				"Etxea", "Kanpokoa", "Zelaia", "Etxeko puntuak", "Kanpoko puntuak"
+				"Etxea", "Kanpokoa", "Etxeko puntuak", "Kanpoko puntuak"
 			}
-			) {
-			/**
-				 * 
-				 */
-				private static final long serialVersionUID = 1L;
+		) {
 			Class[] columnTypes = new Class[] {
-				Object.class, Object.class, Object.class, Integer.class, Integer.class
+				Object.class, Object.class, Integer.class, Integer.class
 			};
 			public Class getColumnClass(int columnIndex) {
 				return columnTypes[columnIndex];
 			}
+			boolean[] columnEditables = new boolean[] {
+				true, true, false, false
+			};
+			public boolean isCellEditable(int row, int column) {
+				return columnEditables[column];
+			}
 		});
-			
-		bni1=bni1+1;bcg1=bcg1+1;cci1=cci1+1; cbg1=cbg1+1; ahg1=ahg1+1; chi1=chi1+1;
-			
 		table_9.getColumnModel().getColumn(0).setPreferredWidth(84);
 		table_9.getColumnModel().getColumn(1).setPreferredWidth(84);
+		table_9.getColumnModel().getColumn(2).setPreferredWidth(28);
 		table_9.getColumnModel().getColumn(3).setPreferredWidth(28);
-		table_9.getColumnModel().getColumn(4).setPreferredWidth(28);
+			
+		bni1=bni1+1;bcg1=bcg1+1;cci1=cci1+1; cbg1=cbg1+1; ahg1=ahg1+1; chi1=chi1+1;
 		table_9.setBounds(253, 259, 200, 50);
 		panel1.add(table_9);
 			
@@ -802,6 +839,9 @@ public class Denboraldiak extends JPanel {
 
 	}
 	
+	public void bigade() {
+		
+	}
 
 	private static class __Tmp {
 		private static void __tmp() {

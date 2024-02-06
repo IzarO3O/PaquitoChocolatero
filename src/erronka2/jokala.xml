@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Jokalariak [
+    <!ELEMENT Jokalariak (Jokalaria+)>
+   
+    <!ELEMENT Jokalaria (Izena, Abiadura, Defentsa, Punteria)>
+    <!ELEMENT Izena (#PCDATA)>
+    <!ELEMENT Abiadura (#PCDATA)>
+    <!ELEMENT Defentsa (#PCDATA)>
+    <!ELEMENT Punteria (#PCDATA)>    
+    
+    
+    
+    
+]>
+
+<Jokalariak>
+
+    <Jokalaria>
+        <Izena>Paco</Izena>
+        <Abiadura>45</Abiadura>
+        <Defentsa>112</Defentsa>
+        <Punteria>60</Punteria>
+    </Jokalaria>
+    <Jokalaria>
+        <Izena>Paquito</Izena>
+        <Abiadura>108</Abiadura>
+        <Defentsa>52</Defentsa>
+        <Punteria>93</Punteria>
+    </Jokalaria>
+    <Jokalaria>
+        <Izena>Manolito</Izena>
+        <Abiadura>97</Abiadura>
+        <Defentsa>38</Defentsa>
+        <Punteria>111</Punteria>
+    </Jokalaria>
+    <Jokalaria>
+        <Izena>Manolo</Izena>
+        <Abiadura>50</Abiadura>
+        <Defentsa>94</Defentsa>
+        <Punteria>72</Punteria>
+    </Jokalaria>
+    <Jokalaria>
+        <Izena>Galileo</Izena>
+        <Abiadura>85</Abiadura>
+        <Defentsa>31</Defentsa>
+        <Punteria>99</Punteria>
+    </Jokalaria>
+    <Jokalaria>
+        <Izena>Gervasio</Izena>
+        <Abiadura>73</Abiadura>
+        <Defentsa>102</Defentsa>
+        <Punteria>44</Punteria>
+    </Jokalaria>
+    <Jokalaria>
+        <Izena>Nicolas</Izena>
+        <Abiadura>118</Abiadura>
+        <Defentsa>28</Defentsa>
+        <Punteria>75</Punteria>
+    </Jokalaria>
+</Jokalariak>

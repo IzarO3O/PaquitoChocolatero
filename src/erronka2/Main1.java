@@ -1,6 +1,7 @@
 package erronka2;
 
-
+import java.io.FileWriter;
+import java.io.IOException;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<libreria>
+    <libro>
+        <titulo>El  de los anillos</titulo>
+        <autor>J.R.R. Tolkien</autor>
+        <anio>1954</anio>
+    </libro>
+    <libro>
+        <titulo>Cien años de soledad</titulo>
+        <autor>Gabriel García Márquez</autor>
+        <anio>1967</anio>
+    </libro>
+    <libro>
+        <titulo>Harry Potter y la piedra filosofal</titulo>
+        <autor>J. Rowling</autor>
+        <anio>1997</anio>
+    </libro>
+</libreria>

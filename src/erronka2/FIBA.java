@@ -1,6 +1,18 @@
 package erronka2;
 
 import javax.swing.JPanel;
+import java.io.FileWriter;
+import java.io.IOException;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.DocumentBuilder;
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+
+import erronkaOndo2.Persona;
+
+import org.w3c.dom.Node;
+import org.w3c.dom.Element;
+import java.io.File;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -15,6 +27,8 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
@@ -26,10 +40,23 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JSpinner;
 
+/**
+ * 
+ */
 public class FIBA extends JPanel {
 
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
+	/**
+	 * 
+	 */
 	private JTextField textField;
+	/**
+	 * 
+	 */
+	@SuppressWarnings("unused")
 	private boolean ireki=false;
 
 	/**
@@ -155,6 +182,7 @@ public class FIBA extends JPanel {
 		add(panel1);
 		panel1.setLayout(null);
 		panel1.setVisible(false);
+		
 		JLabel lblNewLabel_1 = new JLabel("IZENA");
 		lblNewLabel_1.setBounds(46, 40, 45, 13);
 		panel1.add(lblNewLabel_1);
@@ -196,9 +224,9 @@ public class FIBA extends JPanel {
 				if (textField.getText().isEmpty()) {
 					JOptionPane.showMessageDialog(new JFrame(), "Parametro guztiak idatzi","Error",JOptionPane.WARNING_MESSAGE);
 				}else {
-					int abi = (Integer) spinner_3.getValue();
-					int pun = (Integer) spinner_1.getValue();
-					int def = (Integer) spinner_2.getValue();
+					int abi = (int) spinner_3.getValue();
+					int pun = (int) spinner_1.getValue();
+					int def = (int) spinner_2.getValue();
 
 					if (abi>120||abi<0||def>120||def<0||pun>120||pun<0) {
 						JOptionPane.showMessageDialog(new JFrame(), "Habilitatea ez da onartzen","Error",JOptionPane.WARNING_MESSAGE);
@@ -213,6 +241,21 @@ public class FIBA extends JPanel {
 						panel1.setVisible(false);
 					}
 				}
+		        // Crear una instancia de Persona
+		        Jokalaria persona = new Jokalaria();
+
+		        // Obtener la representación XML de la persona
+		        String xmlPersona = persona.toXML();
+
+		        // Escribir el XML en un archivo
+		        try {
+		            FileWriter writer = new FileWriter("C:\\PROG\\JAVA\\src\\erronka2\\jokala.xml");
+		            writer.write(xmlPersona);
+		            writer.close();
+					JOptionPane.showMessageDialog(new JFrame(), "No","Error",JOptionPane.WARNING_MESSAGE);
+		        } catch (IOException e1) {
+					JOptionPane.showMessageDialog(new JFrame(), "Ez da onartu","Error",JOptionPane.WARNING_MESSAGE);
+		        }
 				
 				 
 			}
@@ -229,7 +272,9 @@ public class FIBA extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 			panel.setVisible(false);
 			panel1.setVisible(true);
-			}
+
+	    }
+			
 		});
 	}
 	
