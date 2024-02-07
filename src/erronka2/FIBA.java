@@ -1,20 +1,35 @@
 package erronka2;
 
 import javax.swing.JPanel;
+
 import java.io.FileWriter;
 import java.io.IOException;
-import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 import erronkaOndo2.Persona;
 
 import org.w3c.dom.Node;
 import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
+
 import java.io.File;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -62,7 +77,8 @@ public class FIBA extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	
+	private int puntu1 = 0;
+	private int puntu2 = 0;
 	FileOutputStream fos;
 	ObjectOutputStream oos;
 
@@ -72,12 +88,20 @@ public class FIBA extends JPanel {
 		setBackground(new Color(128, 128, 128));
 		setLayout(null);
 		
-		menuFIBA();
+		try {
+			menuFIBA();
+		} catch (SAXException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		
 	}
 	@SuppressWarnings("deprecation")
-	public void menuFIBA () {
+	public void menuFIBA () throws SAXException, IOException {
 		JPanel panel = new JPanel();
 		panel.setBounds(10, 10, 684, 360);
 		add(panel);
@@ -89,82 +113,62 @@ public class FIBA extends JPanel {
 		JButton btnNewButton = new JButton("Jolastu");
 		btnNewButton.setBounds(529, 10, 145, 30);
 		panel.add(btnNewButton);
-		DefaultComboBoxModel<String> Izenak = new DefaultComboBoxModel<>();
-
-		Izenak.addElement("Paco");
-		Izenak.addElement("Paquito");
-		Izenak.addElement("Manolito");
-		Izenak.addElement("Manolo");
-		Izenak.addElement("Galileo");
-		Izenak.addElement("Gervasio");
-		Izenak.addElement("Nicolas");
-				
+		
 		JComboBox comboBox_9 = new JComboBox();
 		comboBox_9.setBounds(173, 75, 64, 21);
 		panel.add(comboBox_9);
 		comboBox_9.setBackground(new Color(255, 128, 128));
-		comboBox_9.setModel(Izenak);
 		
 		JComboBox comboBox_1 = new JComboBox();
 		comboBox_1.setBounds(173, 101, 64, 21);
 		panel.add(comboBox_1);
 		comboBox_1.setBackground(new Color(128, 128, 255));
-		comboBox_1.setModel(Izenak);
-		//    panel.drawImage(background, 0, 0, null);
 			
 		JComboBox comboBox = new JComboBox();
 		comboBox.setBounds(86, 179, 64, 21);
 		panel.add(comboBox);
 		comboBox.setBackground(new Color(128, 128, 255));
-		comboBox.setModel(Izenak);
 		
 				
 		JComboBox comboBox_2 = new JComboBox();
 		comboBox_2.setBounds(151, 280, 64, 21);
 		panel.add(comboBox_2);
 		comboBox_2.setBackground(new Color(128, 128, 255));
-		comboBox_2.setModel(Izenak);
 		
 				
 		JComboBox comboBox_8 = new JComboBox();
 		comboBox_8.setBounds(237, 250, 64, 21);
 		panel.add(comboBox_8);
 		comboBox_8.setBackground(new Color(255, 128, 128));
-		comboBox_8.setModel(Izenak);
 		
 				
 		JComboBox comboBox_4 = new JComboBox();
 		comboBox_4.setBounds(466, 280, 64, 21);
 		panel.add(comboBox_4);
 		comboBox_4.setBackground(new Color(128, 128, 255));
-		comboBox_4.setModel(Izenak);
 		
 				
 		JComboBox comboBox_6 = new JComboBox();
 		comboBox_6.setBounds(466, 250, 64, 21);
 		panel.add(comboBox_6);
 		comboBox_6.setBackground(new Color(255, 128, 128));
-		comboBox_6.setModel(Izenak);
 		
 		JComboBox comboBox_5 = new JComboBox();
 		comboBox_5.setBounds(552, 179, 64, 21);
 		panel.add(comboBox_5);
 		comboBox_5.setBackground(new Color(255, 128, 128));
-		comboBox_5.setModel(Izenak);
 		
 				
 		JComboBox comboBox_7 = new JComboBox();
 		comboBox_7.setBounds(504, 101, 64, 21);
 		panel.add(comboBox_7);
 		comboBox_7.setBackground(new Color(255, 128, 128));
-		comboBox_7.setModel(Izenak);
 		
 			
 		JComboBox comboBox_3 = new JComboBox();
 		comboBox_3.setBounds(425, 75, 64, 21);
 		panel.add(comboBox_3);
 		comboBox_3.setBackground(new Color(128, 128, 255));
-		comboBox_3.setModel(Izenak);
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setBounds(43, 50, 617, 292);
@@ -172,9 +176,229 @@ public class FIBA extends JPanel {
 		lblNewLabel.setIcon(new ImageIcon(FIBA.class.getResource("/erronka2/court.jpg")));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				 try {
+				File xmlFile = new File("C:\\PROG\\JAVA\\src\\erronka2\\names.xml");
+
+	            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+	            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+	            Document doc = dBuilder.parse(xmlFile);
+
+	            // Normalize the document
+	            doc.getDocumentElement().normalize();
+
+	            // Assuming each name is represented by a <Name> element
+	            NodeList nameList = doc.getElementsByTagName("Izena");
+
+	            for (int temp = 0; temp < nameList.getLength(); temp++) {
+	                org.w3c.dom.Node nNode = nameList.item(temp);
+
+	                if (nNode.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
+	                    Element eElement = (Element) nNode;
+
+	                    // Check if the name matches the search term
+	                    if (eElement.getTextContent().equals(comboBox.getSelectedItem())) {
+	                        // Get attributes Abiadura, Punteria, and Defentza
+	                        String abiadura = eElement.getAttribute("Abiadura");
+	                        String punteria = eElement.getAttribute("Punteria");
+	                        String defentza = eElement.getAttribute("Defentza");
+	                    }
+	                }
+	            }
+	            
+	            for (int temp = 0; temp < nameList.getLength(); temp++) {
+	                org.w3c.dom.Node nNode = nameList.item(temp);
+
+	                if (nNode.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
+	                    Element eElement = (Element) nNode;
+
+	                    // Check if the name matches the search term
+	                    if (eElement.getTextContent().equals(comboBox_1.getSelectedItem())) {
+	                        // Get attributes Abiadura, Punteria, and Defentza
+	                        String abiadura1 = eElement.getAttribute("Abiadura");
+	                        String punteria1 = eElement.getAttribute("Punteria");
+	                        String defentza1 = eElement.getAttribute("Defentza");
+
+	                    }
+	                }
+	            }
+	            
+	            for (int temp = 0; temp < nameList.getLength(); temp++) {
+	                org.w3c.dom.Node nNode = nameList.item(temp);
+
+	                if (nNode.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
+	                    Element eElement = (Element) nNode;
+
+	                    // Check if the name matches the search term
+	                    if (eElement.getTextContent().equals(comboBox_1.getSelectedItem())) {
+	                        // Get attributes Abiadura, Punteria, and Defentza
+	                        String abiadura2 = eElement.getAttribute("Abiadura");
+	                        String punteria2 = eElement.getAttribute("Punteria");
+	                        String defentza2 = eElement.getAttribute("Defentza");
+
+	                    }
+	                }
+	            }
+	            for (int temp = 0; temp < nameList.getLength(); temp++) {
+	                org.w3c.dom.Node nNode = nameList.item(temp);
+
+	                if (nNode.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
+	                    Element eElement = (Element) nNode;
+
+	                    // Check if the name matches the search term
+	                    if (eElement.getTextContent().equals(comboBox_1.getSelectedItem())) {
+	                        // Get attributes Abiadura, Punteria, and Defentza
+	                        String abiadura3 = eElement.getAttribute("Abiadura");
+	                        String punteria3 = eElement.getAttribute("Punteria");
+	                        String defentza3 = eElement.getAttribute("Defentza");
+
+	                    }
+	                }
+	            }
+	            for (int temp = 0; temp < nameList.getLength(); temp++) {
+	                org.w3c.dom.Node nNode = nameList.item(temp);
+
+	                if (nNode.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
+	                    Element eElement = (Element) nNode;
+
+	                    // Check if the name matches the search term
+	                    if (eElement.getTextContent().equals(comboBox_1.getSelectedItem())) {
+	                        // Get attributes Abiadura, Punteria, and Defentza
+	                        String abiadura4 = eElement.getAttribute("Abiadura");
+	                        String punteria4 = eElement.getAttribute("Punteria");
+	                        String defentza4 = eElement.getAttribute("Defentza");
+
+	                    }
+	                }
+	            }
+	            for (int temp = 0; temp < nameList.getLength(); temp++) {
+	                org.w3c.dom.Node nNode = nameList.item(temp);
+
+	                if (nNode.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
+	                    Element eElement = (Element) nNode;
+
+	                    // Check if the name matches the search term
+	                    if (eElement.getTextContent().equals(comboBox_1.getSelectedItem())) {
+	                        // Get attributes Abiadura, Punteria, and Defentza
+	                        String abiadura5 = eElement.getAttribute("Abiadura");
+	                        String punteria5 = eElement.getAttribute("Punteria");
+	                        String defentza5 = eElement.getAttribute("Defentza");
+
+	                    }
+	                }
+	            }
+	            for (int temp = 0; temp < nameList.getLength(); temp++) {
+	                org.w3c.dom.Node nNode = nameList.item(temp);
+
+	                if (nNode.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
+	                    Element eElement = (Element) nNode;
+
+	                    // Check if the name matches the search term
+	                    if (eElement.getTextContent().equals(comboBox_1.getSelectedItem())) {
+	                        // Get attributes Abiadura, Punteria, and Defentza
+	                        String abiadura6 = eElement.getAttribute("Abiadura");
+	                        String punteria6 = eElement.getAttribute("Punteria");
+	                        String defentza6 = eElement.getAttribute("Defentza");
+
+	                    }
+	                }
+	            }
+	            for (int temp = 0; temp < nameList.getLength(); temp++) {
+	                org.w3c.dom.Node nNode = nameList.item(temp);
+
+	                if (nNode.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
+	                    Element eElement = (Element) nNode;
+
+	                    // Check if the name matches the search term
+	                    if (eElement.getTextContent().equals(comboBox_1.getSelectedItem())) {
+	                        // Get attributes Abiadura, Punteria, and Defentza
+	                        String abiadura7 = eElement.getAttribute("Abiadura");
+	                        String punteria7 = eElement.getAttribute("Punteria");
+	                        String defentza7 = eElement.getAttribute("Defentza");
+
+	                    }
+	                }
+	            }
+	            for (int temp = 0; temp < nameList.getLength(); temp++) {
+	                org.w3c.dom.Node nNode = nameList.item(temp);
+
+	                if (nNode.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
+	                    Element eElement = (Element) nNode;
+
+	                    // Check if the name matches the search term
+	                    if (eElement.getTextContent().equals(comboBox_1.getSelectedItem())) {
+	                        // Get attributes Abiadura, Punteria, and Defentza
+	                        String abiadura8 = eElement.getAttribute("Abiadura");
+	                        String punteria8 = eElement.getAttribute("Punteria");
+	                        String defentza8 = eElement.getAttribute("Defentza");
+
+	                    }
+	                }
+	            }
+	            for (int temp = 0; temp < nameList.getLength(); temp++) {
+	                org.w3c.dom.Node nNode = nameList.item(temp);
+
+	                if (nNode.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
+	                    Element eElement = (Element) nNode;
+
+	                    // Check if the name matches the search term
+	                    if (eElement.getTextContent().equals(comboBox_1.getSelectedItem())) {
+	                        // Get attributes Abiadura, Punteria, and Defentza
+	                        String abiadura9 = eElement.getAttribute("Abiadura");
+	                        String punteria9 = eElement.getAttribute("Punteria");
+	                        String defentza9 = eElement.getAttribute("Defentza");
+
+	                    }
+	                }
+	            }
+	            
+	            
+	           
+	            
+	        } catch (ParserConfigurationException | SAXException | IOException e1) {
+	            e1.printStackTrace(); // Handle error properly in your application
+	        }
 			}
 		});
+		
+		try {
+			//XMLtik comboBoxera
+	        File xmlFile = new File("C:\\PROG\\JAVA\\src\\erronka2\\jokala.xml");
+
+	        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+	        DocumentBuilder dBuilder;
+			
+				dBuilder = dbFactory.newDocumentBuilder();
+			
+	        Document doc1 = dBuilder.parse(xmlFile);
+
+	        // Normalize the document
+	        doc1.getDocumentElement().normalize();
+
+	        NodeList nameList = doc1.getElementsByTagName("Izena");
+
+	        for (int temp = 0; temp < nameList.getLength(); temp++) {
+	            org.w3c.dom.Node nNode = nameList.item(temp);
+
+	            if (nNode.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
+	                Element eElement = (Element) nNode;
+	                for (Component component : getComponents()) {
+	                	comboBox.addItem(eElement.getTextContent()); 
+	                	comboBox_1.addItem(eElement.getTextContent());
+	                	comboBox_2.addItem(eElement.getTextContent());
+	                	comboBox_3.addItem(eElement.getTextContent());
+	                	comboBox_4.addItem(eElement.getTextContent());
+	                	comboBox_5.addItem(eElement.getTextContent());
+	                	comboBox_6.addItem(eElement.getTextContent());
+	                	comboBox_7.addItem(eElement.getTextContent());
+	                	comboBox_8.addItem(eElement.getTextContent());
+	                	comboBox_9.addItem(eElement.getTextContent());
+	        }
+	            }
+	        }
+	        } catch (ParserConfigurationException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		
 		JPanel panel1 = new JPanel();
 		panel1.setBackground(new Color(192, 192, 192));
@@ -239,28 +463,75 @@ public class FIBA extends JPanel {
 						
 						panel.setVisible(true);
 						panel1.setVisible(false);
-					}
-				}
-		        // Crear una instancia de Persona
-		        Jokalaria persona = new Jokalaria();
+						// Crear una instancia de Jokalaria
+						/*   Jokalaria jokalaria = new Jokalaria();
 
-		        // Obtener la representación XML de la persona
-		        String xmlPersona = persona.toXML();
-
-		        // Escribir el XML en un archivo
+		        		// Obtener la representación XML de la jokalaria
+		        		String xmljokala = jokalaria.toXML();
+*/
+						// Escribir el XML en un archivo
 		        try {
-		            FileWriter writer = new FileWriter("C:\\PROG\\JAVA\\src\\erronka2\\jokala.xml");
-		            writer.write(xmlPersona);
-		            writer.close();
-					JOptionPane.showMessageDialog(new JFrame(), "No","Error",JOptionPane.WARNING_MESSAGE);
-		        } catch (IOException e1) {
+		        	String i = textField.getText();
+		            String a = Integer.toString(abi);
+		            String p = Integer.toString(pun);
+		            String d = Integer.toString(def);
+
+		            DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+		            DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+		            Document doc = docBuilder.parse("C:\\PROG\\JAVA\\src\\erronka2\\jokala.xml");
+
+		            // Create a new jokala element
+		            Element jokalaElement = doc.createElement("Jokalaria");
+
+		            // Create elements for each piece of information
+		            Element izenaElement = doc.createElement("Izena");
+		            izenaElement.appendChild(doc.createTextNode(i));
+		            jokalaElement.appendChild(izenaElement);
+
+		            Element abiaduraElement = doc.createElement("Abiadura");
+		            abiaduraElement.appendChild(doc.createTextNode(a));
+		            jokalaElement.appendChild(abiaduraElement);
+
+		            Element punteriaElement = doc.createElement("Punteria");
+		            punteriaElement.appendChild(doc.createTextNode(p));
+		            jokalaElement.appendChild(punteriaElement);
+
+		            Element defentzaElement = doc.createElement("Defentza");
+		            defentzaElement.appendChild(doc.createTextNode(d));
+		            jokalaElement.appendChild(defentzaElement);
+
+		            // Append the jokala element to the root element of the document
+		            doc.getDocumentElement().appendChild(jokalaElement);
+
+		            // Write the updated XML document back to the file
+		            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+		            Transformer transformer = transformerFactory.newTransformer();
+		            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+		            DOMSource source = new DOMSource(doc);
+		            StreamResult result = new StreamResult(new File("C:\\PROG\\JAVA\\src\\erronka2\\jokala.xml"));
+		            transformer.transform(source, result);
+
+		            
+		            
+		        /*	Transformer transformer = TransformerFactory.newInstance().newTransformer();
+		        	transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+		        	//initialize StreamResult with File object to save to file
+		        	StreamResult result = new StreamResult(new StringWriter());
+		        	DOMSource source = new DOMSource(doc);
+		        	transformer.transform(source, result);
+
+		        	String xmlString = result.getWriter().toString();
+		        	System.out.println(xmlString);
+					*/JOptionPane.showMessageDialog(new JFrame(), "No","Error",JOptionPane.WARNING_MESSAGE);
+		        } catch (IOException | ParserConfigurationException | SAXException | TransformerException e1) {
 					JOptionPane.showMessageDialog(new JFrame(), "Ez da onartu","Error",JOptionPane.WARNING_MESSAGE);
 		        }
 				
 				 
 			}
 
-			
+				}}
 			
 		/*	public int getTextField(JSpinner spinner) {
 				// TODO Auto-generated method stub
@@ -273,14 +544,14 @@ public class FIBA extends JPanel {
 			panel.setVisible(false);
 			panel1.setVisible(true);
 
-	    }
+	    }	        
 			
 		});
-	}
+	
 	
 	
 	
 	//public void jokalariBerri() {
 		//this.menuFIBA();
 		
-}
+}}
