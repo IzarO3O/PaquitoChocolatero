@@ -43,18 +43,45 @@ public class Denboraldiak extends JPanel {
 	private JTable table_7;
 	private JTable table_8;
 	private JTable table_9;
+	
 	public int chi1 = 0;
+	public int che1 = 0;
 	public int chg1 = 0;
 	public int cci1 = 0;
+	public int cce1 = 0;
 	public int ccg1 = 0;
 	public int bci1 = 0;
+	public int bce1 = 0;
 	public int bcg1 = 0;
 	public int bni1 = 0;
+	public int bne1 = 0;
 	public int bng1 = 0;
 	public int ahi1 = 0;
+	public int ahe1 = 0;
 	public int ahg1 = 0;
 	public int cbi1 = 0;
+	public int cbe1 = 0;
 	public int cbg1 = 0;
+	
+	public int chi2 = 0;
+	public int che2 = 0;
+	public int chg2 = 0;
+	public int cci2 = 0;
+	public int cce2 = 0;
+	public int ccg2 = 0;
+	public int bci2 = 0;
+	public int bce2 = 0;
+	public int bcg2 = 0;
+	public int bni2 = 0;
+	public int bne2 = 0;
+	public int bng2 = 0;
+	public int ahi2 = 0;
+	public int ahe2 = 0;
+	public int ahg2 = 0;
+	public int cbi2 = 0;
+	public int cbe2 = 0;
+	public int cbg2 = 0;
+	
 	public String [] denb1;
 	public static JList list;
 	private JTextField textField;
@@ -83,6 +110,11 @@ public class Denboraldiak extends JPanel {
 	public ArrayList den1CC[];
 	public ArrayList den1AH[];
 	public ArrayList den1CH[];
+	boolean batDen = false;
+	boolean biDen = false;
+	boolean hiruDen = false;
+	boolean lauDen = false;
+	boolean bostDen = false;
 
 	String A = null;
 	String B = null;
@@ -104,37 +136,6 @@ public class Denboraldiak extends JPanel {
 		panelki.setBounds(32, 34, 306, 333);
 		add(panelki);
 		panelki.setLayout(null);
-		
-		JTextField textFieldki = new JTextField();
-		textFieldki.setEditable(false);
-		textFieldki.setBounds(21, 75, 109, 29);
-		panelki.add(textFieldki);
-		textFieldki.setColumns(10);
-		
-		JTextField textField_1ki = new JTextField();
-		textField_1ki.setColumns(10);
-		textField_1ki.setBounds(157, 75, 109, 29);
-		panelki.add(textField_1ki);
-		
-		JTextField textField_2ki = new JTextField();
-		textField_2ki.setColumns(10);
-		textField_2ki.setBounds(21, 155, 109, 29);
-		panelki.add(textField_2ki);
-		
-		JTextField textField_3ki = new JTextField();
-		textField_3ki.setColumns(10);
-		textField_3ki.setBounds(157, 155, 109, 29);
-		panelki.add(textField_3ki);
-		
-		JTextField textField_4ki = new JTextField();
-		textField_4ki.setColumns(10);
-		textField_4ki.setBounds(21, 231, 109, 29);
-		panelki.add(textField_4ki);
-		
-		JTextField textField_5ki = new JTextField();
-		textField_5ki.setColumns(10);
-		textField_5ki.setBounds(157, 231, 109, 29);
-		panelki.add(textField_5ki);
 		
 		
 		
@@ -310,136 +311,6 @@ public class Denboraldiak extends JPanel {
 		
 		
 		JButton btnNewButton_2_1 = new JButton("Gorde");
-		btnNewButton_2_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (comboBoxModel.getSelectedItem()==comboBoxModel1.getSelectedItem()||comboBoxModel.getSelectedItem()==comboBoxModel2.getSelectedItem()||comboBoxModel.getSelectedItem()==comboBoxModel3.getSelectedItem()||comboBoxModel.getSelectedItem()==comboBoxModel4.getSelectedItem()||comboBoxModel.getSelectedItem()==comboBoxModel5.getSelectedItem()||
-						comboBoxModel1.getSelectedItem()==comboBoxModel2.getSelectedItem()||comboBoxModel1.getSelectedItem()==comboBoxModel3.getSelectedItem()||comboBox_1.getSelectedItem()==comboBox_4.getSelectedItem()||comboBox_1.getSelectedItem()==comboBox_5.getSelectedItem()||
-						comboBox_2.getSelectedItem()==comboBox_3.getSelectedItem()||comboBox_2.getSelectedItem()==comboBox_4.getSelectedItem()||comboBox_2.getSelectedItem()==comboBox_4.getSelectedItem()||
-						comboBox_3.getSelectedItem()==comboBox_4.getSelectedItem()||comboBox_3.getSelectedItem()==comboBox_5.getSelectedItem()||
-						comboBox_4.getSelectedItem()==comboBox_5.getSelectedItem()) {
-					JOptionPane.showMessageDialog(new JFrame(), "Ezin dira taldeak errepiaktu","Error",JOptionPane.WARNING_MESSAGE);
-				} else {
-				int puntu0=(Integer) spinner.getValue();
-				int puntu1=(Integer) spinner_1.getValue();
-				int puntu2=(Integer) spinner_2.getValue();
-				int puntu3=(Integer) spinner_3.getValue();
-				int puntu4=(Integer) spinner_4.getValue();
-				int puntu5=(Integer) spinner_5.getValue();
-				
-				
-				if (puntu0<0||puntu1<0||puntu2<0||puntu3<0||puntu4<0||puntu5<0) {
-					JOptionPane.showMessageDialog(new JFrame(), "Ezin dira puntu negatiboak euki","Error",JOptionPane.WARNING_MESSAGE);
-
-				}else {
-					jaur3 = true;
-					
-
-					comboBox.setEnabled(false);
-					comboBox_1.setEnabled(false);
-					comboBox_2.setEnabled(false);
-					comboBox_3.setEnabled(false);
-					comboBox_4.setEnabled(false);
-					comboBox_5.setEnabled(false);
-					spinner.setEnabled(false);
-					spinner_1.setEnabled(false);
-					spinner_2.setEnabled(false);
-					spinner_3.setEnabled(false);
-					spinner_4.setEnabled(false);
-					spinner_5.setEnabled(false);
-
-					ArrayList<Object> den1BC = new ArrayList<Object>() ;
-					den1BC.add("Boston Celtics");
-					den1BC.add(bci1);
-					den1BC.add(bcg1);
-					
-					ArrayList<Object> den1BN = new ArrayList<Object>() ;
-					den1BC.add("Brooklyn Nets");
-					den1BC.add(bni1);
-					den1BC.add(bng1);
-					
-					ArrayList<Object> den1CB = new ArrayList<Object>() ;
-					den1BC.add("Chicago Bulls");
-					den1BC.add(cbi1);
-					den1BC.add(cbg1);
-					
-					ArrayList<Object> den1CC = new ArrayList<Object>() ;
-					den1BC.add("Cleveland Cavaliers");
-					den1BC.add(cci1);
-					den1BC.add(ccg1);
-					
-					ArrayList<Object> den1AH = new ArrayList<Object>() ;
-					den1BC.add("Atlanta Hawks");
-					den1BC.add(ahi1);
-					den1BC.add(ahg1);
-
-					ArrayList<Object> den1CH = new ArrayList<Object>() ;
-					den1BC.add("Charlotte Hornets");
-					den1BC.add(chi1);
-					den1BC.add(chg1);
-					
-					den1[1].add(den1BC);
-					den1[2].add(den1BN);
-					den1[3].add(den1CB);
-					den1[4].add(den1CC);
-					den1[5].add(den1AH);
-					den1[6].add(den1CH);
-					
-				}
-				}
-			}
-		});
-		
-		
-		JButton btnNewButton_2_1b = new JButton("Gorde");
-		btnNewButton_2_1b.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				if (comboBox.getSelectedIndex()==comboBox_1.getSelectedIndex()||comboBox.getSelectedIndex()==comboBox_2.getSelectedIndex()||comboBox.getSelectedIndex()==comboBox_3.getSelectedIndex()||comboBox.getSelectedIndex()==comboBox_4.getSelectedIndex()||comboBox.getSelectedIndex()==comboBox_5.getSelectedIndex()||
-						comboBox_1.getSelectedIndex()==comboBox_2.getSelectedIndex()||comboBox_1.getSelectedIndex()==comboBox_3.getSelectedIndex()||comboBox_1.getSelectedIndex()==comboBox_4.getSelectedIndex()||comboBox_1.getSelectedIndex()==comboBox_5.getSelectedIndex()||
-						comboBox_2.getSelectedIndex()==comboBox_3.getSelectedIndex()||comboBox_2.getSelectedIndex()==comboBox_4.getSelectedIndex()||comboBox_2.getSelectedIndex()==comboBox_4.getSelectedIndex()||
-						comboBox_3.getSelectedIndex()==comboBox_4.getSelectedIndex()||comboBox_3.getSelectedIndex()==comboBox_5.getSelectedIndex()||
-						comboBox_4.getSelectedIndex()==comboBox_5.getSelectedIndex()) {
-					JOptionPane.showMessageDialog(new JFrame(), "Ezin dira taldeak errepiaktu","Error",JOptionPane.WARNING_MESSAGE);
-				} else {
-				int puntu0=(Integer) spinner.getValue();
-				int puntu1=(Integer) spinner_1.getValue();
-				int puntu2=(Integer) spinner_2.getValue();
-				int puntu3=(Integer) spinner_3.getValue();
-				int puntu4=(Integer) spinner_4.getValue();
-				int puntu5=(Integer) spinner_5.getValue();
-				
-				
-				if (puntu0<0||puntu1<0||puntu2<0||puntu3<0||puntu4<0||puntu5<0) {
-					JOptionPane.showMessageDialog(new JFrame(), "Ezin dira puntu negatiboak euki","Error",JOptionPane.WARNING_MESSAGE);
-
-				}else {
-					jaur3 = true;
-
-					comboBox.setEnabled(false);
-					comboBox_1.setEnabled(false);
-					comboBox_2.setEnabled(false);
-					comboBox_3.setEnabled(false);
-					comboBox_4.setEnabled(false);
-					comboBox_5.setEnabled(false);
-					spinner.setEnabled(false);
-					spinner_1.setEnabled(false);
-					spinner_2.setEnabled(false);
-					spinner_3.setEnabled(false);
-					spinner_4.setEnabled(false);
-					spinner_5.setEnabled(false);
-					
-					String A = (String) comboBox.getSelectedItem();
-					String B = (String) comboBox_1.getSelectedItem();
-					String C = (String) comboBox_2.getSelectedItem();
-					String D = (String) comboBox_3.getSelectedItem();
-					String E = (String) comboBox_4.getSelectedItem();
-					String F = (String) comboBox_5.getSelectedItem();
-
-				}
-				}
-			}
-		});
-		
 		//FIN DENBORALDI BERRI
 		//HASIERA MENU
 		btnNewButton_2_1.setBounds(221, 273, 75, 21);
@@ -684,6 +555,7 @@ public class Denboraldiak extends JPanel {
 		table_7.getColumnModel().getColumn(2).setPreferredWidth(28);
 		table_7.getColumnModel().getColumn(3).setPreferredWidth(28);
 		table_7.setBounds(253, 177, 200, 50);
+		cbg1= cbg1+1;bci1=bci1+1; bng1=bng1+1;chi1=chi1+1;ccg1=ccg1+1;ahi1=ahi1+1; 
 		panel1.add(table_7);
 			
 		table_8 = new JTable();
@@ -749,6 +621,61 @@ public class Denboraldiak extends JPanel {
 		table_9.getColumnModel().getColumn(3).setPreferredWidth(28);
 			
 		bni1=bni1+1;bcg1=bcg1+1;cci1=cci1+1; cbg1=cbg1+1; ahg1=ahg1+1; chi1=chi1+1;
+		
+		ArrayList<ArrayList<Object>>[] den1 = new ArrayList[6];
+		ArrayList<Object> den1BC = new ArrayList<>();
+		den1BC.add("Boston Celtics");
+		den1BC.add(bci1);
+		den1BC.add(bcg1);
+
+		ArrayList<Object> den1BN = new ArrayList<>();
+		den1BN.add("Brooklyn Nets");
+		den1BN.add(bni1);
+		den1BN.add(bng1);
+
+		ArrayList<Object> den1CB = new ArrayList<>();
+		den1CB.add("Chicago Bulls");
+		den1CB.add(cbi1);
+		den1CB.add(cbg1);
+
+		ArrayList<Object> den1CC = new ArrayList<>();
+		den1CC.add("Cleveland Cavaliers");
+		den1CC.add(cci1);
+		den1CC.add(ccg1);
+
+		ArrayList<Object> den1AH = new ArrayList<>();
+		den1AH.add("Atlanta Hawks");
+		den1AH.add(ahi1);
+		den1AH.add(ahg1);
+
+		ArrayList<Object> den1CH = new ArrayList<>();
+		den1CH.add("Charlotte Hornets");
+		den1CH.add(chi1);
+		den1CH.add(chg1);
+
+		den1[0] = new ArrayList<>();
+		den1[0].add(den1BC);
+
+		den1[1] = new ArrayList<>();
+		den1[1].add(den1BN);
+
+		den1[2] = new ArrayList<>();
+		den1[2].add(den1CB);
+
+		den1[3] = new ArrayList<>();
+		den1[3].add(den1CC);
+
+		den1[4] = new ArrayList<>();
+		den1[4].add(den1AH);
+
+		den1[5] = new ArrayList<>();
+		den1[5].add(den1CH);
+		
+		for (int i= 0 ; i<den1.length; i++) {
+		System.out.println(den1[i]);	
+		}
+		
+		
 		table_9.setBounds(253, 259, 200, 50);
 		panel1.add(table_9);
 			
@@ -801,20 +728,237 @@ public class Denboraldiak extends JPanel {
 				if (list.isSelectionEmpty()) {
 					JOptionPane.showMessageDialog(new JFrame(), "Hautatu denboraldi bat mesedez","Error",JOptionPane.WARNING_MESSAGE);
 				}else if (list.getSelectedValue()=="1. Denboraldia") {
+					batDen=true;
+					biDen=false;
+					hiruDen=false;
+					lauDen=false;
+					bostDen=false;
 					panel.setVisible(false);
 					panel1.setVisible(true);	
 				} else if (list.getSelectedValue()=="2. Denboraldia") {
+					batDen=false;
+					biDen=true;
+					hiruDen=false;
+					lauDen=false;
+					bostDen=false;
+					panel.setVisible(false);
+					panel_2.setVisible(true);
+					panela.setVisible(true);
+					panel_1.setVisible(true);
 					
-				}else {
+					comboBox.setSelectedItem("Chicago Bulls");
+					comboBox.setEnabled(false);
+
+					comboBox_1.setSelectedItem("Charlotte Hornets");
+					comboBox_1.setEnabled(false);
+
+					comboBox_2.setSelectedItem("Boston Celtics");
+					comboBox_2.setEnabled(false);
+
+					comboBox_3.setSelectedItem("Cleveland Cavaliers");
+					comboBox_3.setEnabled(false);
+
+					comboBox_4.setSelectedItem("Brooklyn Nets");
+					comboBox_4.setEnabled(false);
+
+					comboBox_5.setSelectedItem("Atlanta Hawks");
+					comboBox_5.setEnabled(false);
+					
+					spinner.setEnabled(true);
+					spinner.setValue(0);
+					spinner_1.setEnabled(true);
+					spinner_1.setValue(0);
+					spinner_2.setEnabled(true);
+					spinner_2.setValue(0);
+					spinner_3.setEnabled(true);
+					spinner_3.setValue(0);
+					spinner_4.setEnabled(true);
+					spinner_4.setValue(0);
+					spinner_5.setEnabled(true);
+					spinner_5.setValue(0);
+					
+					
+				}else if (list.getSelectedValue().equals("3. Denboraldia")) {
+					batDen=false;
+					biDen=false;
+					hiruDen=true;
+					lauDen=false;
+					bostDen=false;
+					
 					panel.setVisible(false);
 					panel1.setVisible(false);
 					panel_2.setVisible(true);
+					
+					
+					spinner.setValue(0);
+					spinner_1.setEnabled(true);
+					spinner_1.setValue(0);
+					spinner_2.setEnabled(true);
+					spinner_2.setValue(0);
+					spinner_3.setEnabled(true);
+					spinner_3.setValue(0);
+					spinner_4.setEnabled(true);
+					spinner_4.setValue(0);
+					spinner_5.setEnabled(true);
+					spinner_5.setValue(0);
+				}
+				else if (list.getSelectedValue().equals("4. Denboraldia")) {
+					batDen=false;
+					biDen=false;
+					hiruDen=false;
+					lauDen=true;
+					bostDen=false;
+					
+					panel.setVisible(false);
+					panel1.setVisible(false);
+					panel_2.setVisible(true);
+					
+					spinner.setEnabled(true);
+					spinner.setValue(0);
+					spinner_1.setEnabled(true);
+					spinner_1.setValue(0);
+					spinner_2.setEnabled(true);
+					spinner_2.setValue(0);
+					spinner_3.setEnabled(true);
+					spinner_3.setValue(0);
+					spinner_4.setEnabled(true);
+					spinner_4.setValue(0);
+					spinner_5.setEnabled(true);
+					spinner_5.setValue(0);
+				}
+				else if (list.getSelectedValue().equals("5. Denboraldia")) {
+					batDen=false;
+					biDen=false;
+					hiruDen=false;
+					lauDen=false;
+					bostDen=true;
+					
+					panel.setVisible(false);
+					panel1.setVisible(false);
+					panel_2.setVisible(true);
+					
+					spinner.setEnabled(true);
+					spinner.setValue(0);
+					spinner_1.setEnabled(true);
+					spinner_1.setValue(0);
+					spinner_2.setEnabled(true);
+					spinner_2.setValue(0);
+					spinner_3.setEnabled(true);
+					spinner_3.setValue(0);
+					spinner_4.setEnabled(true);
+					spinner_4.setValue(0);
+					spinner_5.setEnabled(true);
+					spinner_5.setValue(0);
 				}
 			}
 		});
+	    	//GORDE BOTOIA
+			btnNewButton_2_1.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					if (comboBoxModel.getSelectedItem()==comboBoxModel1.getSelectedItem()||comboBoxModel.getSelectedItem()==comboBoxModel2.getSelectedItem()||comboBoxModel.getSelectedItem()==comboBoxModel3.getSelectedItem()||comboBoxModel.getSelectedItem()==comboBoxModel4.getSelectedItem()||comboBoxModel.getSelectedItem()==comboBoxModel5.getSelectedItem()||
+							comboBoxModel1.getSelectedItem()==comboBoxModel2.getSelectedItem()||comboBoxModel1.getSelectedItem()==comboBoxModel3.getSelectedItem()||comboBox_1.getSelectedItem()==comboBox_4.getSelectedItem()||comboBox_1.getSelectedItem()==comboBox_5.getSelectedItem()||
+							comboBox_2.getSelectedItem()==comboBox_3.getSelectedItem()||comboBox_2.getSelectedItem()==comboBox_4.getSelectedItem()||comboBox_2.getSelectedItem()==comboBox_4.getSelectedItem()||
+							comboBox_3.getSelectedItem()==comboBox_4.getSelectedItem()||comboBox_3.getSelectedItem()==comboBox_5.getSelectedItem()||
+							comboBox_4.getSelectedItem()==comboBox_5.getSelectedItem()) {
+						JOptionPane.showMessageDialog(new JFrame(), "Ezin dira taldeak errepiaktu","Error",JOptionPane.WARNING_MESSAGE);
+					} else {
+					int puntu0=(Integer) spinner.getValue();
+					int puntu1=(Integer) spinner_1.getValue();
+					int puntu2=(Integer) spinner_2.getValue();
+					int puntu3=(Integer) spinner_3.getValue();
+					int puntu4=(Integer) spinner_4.getValue();
+					int puntu5=(Integer) spinner_5.getValue();
+					
+					
+					if (puntu0<0||puntu1<0||puntu2<0||puntu3<0||puntu4<0||puntu5<0) {
+						JOptionPane.showMessageDialog(new JFrame(), "Ezin dira puntu negatiboak euki","Error",JOptionPane.WARNING_MESSAGE);
+
+					}else {
+						if (biDen=true) {
+							
+							spinner.setEnabled(false);
+							spinner_1.setEnabled(false);
+							spinner_2.setEnabled(false);
+							spinner_3.setEnabled(false);
+							spinner_4.setEnabled(false);
+							spinner_5.setEnabled(false);
+							
+							
+							if (comboBox.getSelectedItem().equals("Boston Celtics")&&(int)spinner.getValue()>(int)spinner_1.getValue()) {
+								bci2= bci2+1;
+							}else if (comboBox.getSelectedItem().equals("Boston Celtics")&&(int)spinner.getValue()<(int)spinner_1.getValue()) {
+								bce2= bce2+1;
+							}else if(comboBox.getSelectedItem().equals("Boston Celtics")&&(int)spinner.getValue()==(int)spinner_1.getValue()){
+								bce2= bce2+1;
+							}
+							if (comboBox.getSelectedItem().equals("Cleveland Cavaliers")&&(int)spinner.getValue()>(int)spinner_1.getValue()) {
+								cci2= cci2+1;
+							}else if (comboBox.getSelectedItem().equals("Cleveland Cavaliers")&&(int)spinner.getValue()<(int)spinner_1.getValue()) {
+								cce2= cce2+1;
+							}else if(comboBox.getSelectedItem().equals("Cleveland Cavaliers")&&(int)spinner.getValue()==(int)spinner_1.getValue()){
+								cce2= cce2+1;
+							}
+							
+
+							
+						}else if(hiruDen=true) {
+							if (comboBox.getSelectedItem().equals("Boston Celtics")&&(int)spinner.getValue()>(int)spinner_1.getValue()) {
+								bci2= bci2+1;
+							}else if (comboBox.getSelectedItem().equals("Boston Celtics")&&(int)spinner.getValue()<(int)spinner_1.getValue()) {
+								bce2= bce2+1;
+							}else if(comboBox.getSelectedItem().equals("Boston Celtics")&&(int)spinner.getValue()==(int)spinner_1.getValue()){
+								bce2= bce2+1;
+							}
+							if (comboBox.getSelectedItem().equals("Cleveland Cavaliers")&&(int)spinner.getValue()>(int)spinner_1.getValue()) {
+								cci2= cci2+1;
+							}else if (comboBox.getSelectedItem().equals("Cleveland Cavaliers")&&(int)spinner.getValue()<(int)spinner_1.getValue()) {
+								cce2= cce2+1;
+							}else if(comboBox.getSelectedItem().equals("Cleveland Cavaliers")&&(int)spinner.getValue()==(int)spinner_1.getValue()){
+								cce2= cce2+1;
+							}
+							
+
+						}else if (lauDen=true) {
+							
+						} else if(bostDen=true) {
+							
+						}
+						
+						
+
+						comboBox.setEnabled(false);
+						comboBox_1.setEnabled(false);
+						comboBox_2.setEnabled(false);
+						comboBox_3.setEnabled(false);
+						comboBox_4.setEnabled(false);
+						comboBox_5.setEnabled(false);
+						spinner.setEnabled(false);
+						spinner_1.setEnabled(false);
+						spinner_2.setEnabled(false);
+						spinner_3.setEnabled(false);
+						spinner_4.setEnabled(false);
+						spinner_5.setEnabled(false);
+
+						String A = (String) comboBox.getSelectedItem();
+						String B = (String) comboBox_1.getSelectedItem();
+						String C = (String) comboBox_2.getSelectedItem();
+						String D = (String) comboBox_3.getSelectedItem();
+						String E = (String) comboBox_4.getSelectedItem();
+						String F = (String) comboBox_5.getSelectedItem();
+						
+						
+					}
+					}
+				}
+			});
 	    
 	    btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				int x = list.getModel().getSize();
+				if (x>=5) {
+					JOptionPane.showMessageDialog(new JFrame(), "Maximoa 5 da","Error",JOptionPane.WARNING_MESSAGE);
+
+				} else {
 				int n = list.getModel().getSize();
 				n= n+1;
 				String i=Integer.toString(n);
@@ -832,6 +976,7 @@ public class Denboraldiak extends JPanel {
 				String s2 =w + "-" + r;
 					
 				Etxea.comboBox.addItem(s2);
+				}
 				
 			}
 		});

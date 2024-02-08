@@ -177,7 +177,7 @@ public class FIBA extends JPanel {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				 try {
-				File xmlFile = new File("C:\\PROG\\JAVA\\src\\erronka2\\names.xml");
+				File xmlFile = new File("C:\\PROG\\JAVA\\src\\erronka2\\jokala.xml");
 
 	            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 	            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -194,162 +194,146 @@ public class FIBA extends JPanel {
 
 	                if (nNode.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
 	                    Element eElement = (Element) nNode;
-
-	                    // Check if the name matches the search term
+	                    
+	                    int abia = 0;
+                        int punt = 0;
+                        int defe = 0;
+	                    int abia1 = 0;
+                        int punt1 = 0;
+                        int defe1 = 0;
+	                    int abia2 = 0;
+                        int punt2 = 0;
+                        int defe2 = 0;
+	                    int abia3 = 0;
+                        int punt3 = 0;
+                        int defe3 = 0;
+	                    int abia4 = 0;
+                        int punt4 = 0;
+                        int defe4 = 0;
+	                    int abia5 = 0;
+                        int punt5 = 0;
+                        int defe5 = 0;
+	                    int abia6 = 0;
+                        int punt6 = 0;
+                        int defe6 = 0;
+	                    int abia7 = 0;
+                        int punt7 = 0;
+                        int defe7 = 0;
+	                    int abia8 = 0;
+                        int punt8 = 0;
+                        int defe8 = 0;
+	                    int abia9 = 0;
+                        int punt9 = 0;
+                        int defe9 = 0;
+                        
+                        // Check if the name matches the search term
 	                    if (eElement.getTextContent().equals(comboBox.getSelectedItem())) {
 	                        // Get attributes Abiadura, Punteria, and Defentza
-	                        String abiadura = eElement.getAttribute("Abiadura");
-	                        String punteria = eElement.getAttribute("Punteria");
-	                        String defentza = eElement.getAttribute("Defentza");
+	                    	NodeList abiaduraElements = eElement.getElementsByTagName("Abiadura");
+	                    	Element abiaduraElement = (Element) abiaduraElements.item(1);
+	                    	String abiadura = abiaduraElement.getTextContent();
+	                    	//String abiadura = eElement.getAttribute("Abiadura");
+	                    	String punteria = eElement.getAttribute("Punteria");
+	                    	String defentza = eElement.getAttribute("Defentza");
+	                    	System.out.println(abiadura);
+	                         abia = 0 + Integer.parseInt(abiadura);
+	                         punt = 0 + Integer.parseInt(punteria);
+	                         defe = 0 + Integer.parseInt(defentza);
+
 	                    }
+	                    if (eElement.getTextContent().equals(comboBox_1.getSelectedItem())) {
+	                        // Get attributes Abiadura, Punteria, and Defentza
+	                    	String abiadura_1 = eElement.getAttribute("Abiadura");
+	                    	String punteria_1 = eElement.getAttribute("Punteria");
+	                    	String defentza_1 = eElement.getAttribute("Defentza");
+		                      abia1 = Integer.parseInt(abiadura_1);
+		                      punt1 = Integer.parseInt(punteria_1);
+		                      defe1 = Integer.parseInt(defentza_1);
+	                    }
+	                    if (eElement.getTextContent().equals(comboBox_2.getSelectedItem())) {
+	                        // Get attributes Abiadura, Punteria, and Defentza
+	                    	String abiadura_2 = eElement.getAttribute("Abiadura");
+	                    	String punteria_2 = eElement.getAttribute("Punteria");
+	                    	String defentza_2 = eElement.getAttribute("Defentza");
+	                          abia2 = Integer.parseInt(abiadura_2);
+		                      punt2 = Integer.parseInt(punteria_2);
+		                      defe2 = Integer.parseInt(defentza_2);
+	                    }
+	                    if (eElement.getTextContent().equals(comboBox_3.getSelectedItem())) {
+	                        // Get attributes Abiadura, Punteria, and Defentza
+	                    	String abiadura_3 = eElement.getAttribute("Abiadura");
+	                    	String punteria_3 = eElement.getAttribute("Punteria");
+	                    	String defentza_3 = eElement.getAttribute("Defentza");
+	                    	abia3 = Integer.parseInt(abiadura_3);
+		                      punt3 = Integer.parseInt(punteria_3);
+		                      defe3 = Integer.parseInt(defentza_3);
+	                    }
+	                    
+	                    if (eElement.getTextContent().equals(comboBox_4.getSelectedItem())) {
+	                        // Get attributes Abiadura, Punteria, and Defentza
+	                    	String abiadura_4 = eElement.getAttribute("Abiadura");
+	                    	String punteria_4 = eElement.getAttribute("Punteria");
+	                    	String defentza_4 = eElement.getAttribute("Defentza");
+	                    	abia4 = Integer.parseInt(abiadura_4);
+		                      punt4 = Integer.parseInt(punteria_4);
+		                      defe4 = Integer.parseInt(defentza_4);
+	                    }
+	                    if (eElement.getTextContent().equals(comboBox_5.getSelectedItem())) {
+	                        // Get attributes Abiadura, Punteria, and Defentza
+	                    	String abiadura_5 = eElement.getAttribute("Abiadura");
+	                    	String punteria_5 = eElement.getAttribute("Punteria");
+	                    	String defentza_5 = eElement.getAttribute("Defentza");
+	                    	abia5 = Integer.parseInt(abiadura_5);
+		                      punt5 = Integer.parseInt(punteria_5);
+		                      defe5 = Integer.parseInt(defentza_5);
+	                    }
+	                    if (eElement.getTextContent().equals(comboBox_6.getSelectedItem())) {
+	                        // Get attributes Abiadura, Punteria, and Defentza
+	                    	String abiadura_6 = eElement.getAttribute("Abiadura");
+	                    	String punteria_6 = eElement.getAttribute("Punteria");
+	                    	String defentza_6 = eElement.getAttribute("Defentza");
+	                    	abia6 = Integer.parseInt(abiadura_6);
+		                      punt6 = Integer.parseInt(punteria_6);
+		                      defe6 = Integer.parseInt(defentza_6);
+	                    }
+	                    if (eElement.getTextContent().equals(comboBox_7.getSelectedItem())) {
+	                        // Get attributes Abiadura, Punteria, and Defentza
+	                    	String abiadura_7 = eElement.getAttribute("Abiadura");
+	                    	String punteria_7 = eElement.getAttribute("Punteria");
+	                    	String defentza_7 = eElement.getAttribute("Defentza");
+	                    	abia7 = Integer.parseInt(abiadura_7);
+		                      punt7 = Integer.parseInt(punteria_7);
+		                      defe7 = Integer.parseInt(defentza_7);
+	                    }
+	                    if (eElement.getTextContent().equals(comboBox_8.getSelectedItem())) {
+	                        // Get attributes Abiadura, Punteria, and Defentza
+	                    	String abiadura_8 = eElement.getAttribute("Abiadura");
+	                    	String punteria_8 = eElement.getAttribute("Punteria");
+	                    	String defentza_8 = eElement.getAttribute("Defentza");
+	                    	abia8 = Integer.parseInt(abiadura_8);
+		                      punt8 = Integer.parseInt(punteria_8);
+		                      defe8 = Integer.parseInt(defentza_8);
+	                    }
+	                    if (eElement.getTextContent().equals(comboBox_9.getSelectedItem())) {
+	                        // Get attributes Abiadura, Punteria, and Defentza
+	                    	String abiadura_9 = eElement.getAttribute("Abiadura");
+	                    	String punteria_9 = eElement.getAttribute("Punteria");
+	                    	String defentza_9 = eElement.getAttribute("Defentza");
+	                    	abia9 = Integer.parseInt(abiadura_9);
+		                      punt9 = Integer.parseInt(punteria_9);
+		                      defe9 = Integer.parseInt(defentza_9);
+	                    }
+	                    if (defe>defe5) {
+	                    	puntu1 = puntu1+1;
+	                    }else if (defe<defe5) {
+	                    	puntu2 = puntu2+1;
+	                    } 
+	                    System.out.println(defe);
+	                
 	                }
 	            }
 	            
-	            for (int temp = 0; temp < nameList.getLength(); temp++) {
-	                org.w3c.dom.Node nNode = nameList.item(temp);
-
-	                if (nNode.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
-	                    Element eElement = (Element) nNode;
-
-	                    // Check if the name matches the search term
-	                    if (eElement.getTextContent().equals(comboBox_1.getSelectedItem())) {
-	                        // Get attributes Abiadura, Punteria, and Defentza
-	                        String abiadura1 = eElement.getAttribute("Abiadura");
-	                        String punteria1 = eElement.getAttribute("Punteria");
-	                        String defentza1 = eElement.getAttribute("Defentza");
-
-	                    }
-	                }
-	            }
 	            
-	            for (int temp = 0; temp < nameList.getLength(); temp++) {
-	                org.w3c.dom.Node nNode = nameList.item(temp);
-
-	                if (nNode.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
-	                    Element eElement = (Element) nNode;
-
-	                    // Check if the name matches the search term
-	                    if (eElement.getTextContent().equals(comboBox_1.getSelectedItem())) {
-	                        // Get attributes Abiadura, Punteria, and Defentza
-	                        String abiadura2 = eElement.getAttribute("Abiadura");
-	                        String punteria2 = eElement.getAttribute("Punteria");
-	                        String defentza2 = eElement.getAttribute("Defentza");
-
-	                    }
-	                }
-	            }
-	            for (int temp = 0; temp < nameList.getLength(); temp++) {
-	                org.w3c.dom.Node nNode = nameList.item(temp);
-
-	                if (nNode.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
-	                    Element eElement = (Element) nNode;
-
-	                    // Check if the name matches the search term
-	                    if (eElement.getTextContent().equals(comboBox_1.getSelectedItem())) {
-	                        // Get attributes Abiadura, Punteria, and Defentza
-	                        String abiadura3 = eElement.getAttribute("Abiadura");
-	                        String punteria3 = eElement.getAttribute("Punteria");
-	                        String defentza3 = eElement.getAttribute("Defentza");
-
-	                    }
-	                }
-	            }
-	            for (int temp = 0; temp < nameList.getLength(); temp++) {
-	                org.w3c.dom.Node nNode = nameList.item(temp);
-
-	                if (nNode.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
-	                    Element eElement = (Element) nNode;
-
-	                    // Check if the name matches the search term
-	                    if (eElement.getTextContent().equals(comboBox_1.getSelectedItem())) {
-	                        // Get attributes Abiadura, Punteria, and Defentza
-	                        String abiadura4 = eElement.getAttribute("Abiadura");
-	                        String punteria4 = eElement.getAttribute("Punteria");
-	                        String defentza4 = eElement.getAttribute("Defentza");
-
-	                    }
-	                }
-	            }
-	            for (int temp = 0; temp < nameList.getLength(); temp++) {
-	                org.w3c.dom.Node nNode = nameList.item(temp);
-
-	                if (nNode.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
-	                    Element eElement = (Element) nNode;
-
-	                    // Check if the name matches the search term
-	                    if (eElement.getTextContent().equals(comboBox_1.getSelectedItem())) {
-	                        // Get attributes Abiadura, Punteria, and Defentza
-	                        String abiadura5 = eElement.getAttribute("Abiadura");
-	                        String punteria5 = eElement.getAttribute("Punteria");
-	                        String defentza5 = eElement.getAttribute("Defentza");
-
-	                    }
-	                }
-	            }
-	            for (int temp = 0; temp < nameList.getLength(); temp++) {
-	                org.w3c.dom.Node nNode = nameList.item(temp);
-
-	                if (nNode.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
-	                    Element eElement = (Element) nNode;
-
-	                    // Check if the name matches the search term
-	                    if (eElement.getTextContent().equals(comboBox_1.getSelectedItem())) {
-	                        // Get attributes Abiadura, Punteria, and Defentza
-	                        String abiadura6 = eElement.getAttribute("Abiadura");
-	                        String punteria6 = eElement.getAttribute("Punteria");
-	                        String defentza6 = eElement.getAttribute("Defentza");
-
-	                    }
-	                }
-	            }
-	            for (int temp = 0; temp < nameList.getLength(); temp++) {
-	                org.w3c.dom.Node nNode = nameList.item(temp);
-
-	                if (nNode.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
-	                    Element eElement = (Element) nNode;
-
-	                    // Check if the name matches the search term
-	                    if (eElement.getTextContent().equals(comboBox_1.getSelectedItem())) {
-	                        // Get attributes Abiadura, Punteria, and Defentza
-	                        String abiadura7 = eElement.getAttribute("Abiadura");
-	                        String punteria7 = eElement.getAttribute("Punteria");
-	                        String defentza7 = eElement.getAttribute("Defentza");
-
-	                    }
-	                }
-	            }
-	            for (int temp = 0; temp < nameList.getLength(); temp++) {
-	                org.w3c.dom.Node nNode = nameList.item(temp);
-
-	                if (nNode.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
-	                    Element eElement = (Element) nNode;
-
-	                    // Check if the name matches the search term
-	                    if (eElement.getTextContent().equals(comboBox_1.getSelectedItem())) {
-	                        // Get attributes Abiadura, Punteria, and Defentza
-	                        String abiadura8 = eElement.getAttribute("Abiadura");
-	                        String punteria8 = eElement.getAttribute("Punteria");
-	                        String defentza8 = eElement.getAttribute("Defentza");
-
-	                    }
-	                }
-	            }
-	            for (int temp = 0; temp < nameList.getLength(); temp++) {
-	                org.w3c.dom.Node nNode = nameList.item(temp);
-
-	                if (nNode.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
-	                    Element eElement = (Element) nNode;
-
-	                    // Check if the name matches the search term
-	                    if (eElement.getTextContent().equals(comboBox_1.getSelectedItem())) {
-	                        // Get attributes Abiadura, Punteria, and Defentza
-	                        String abiadura9 = eElement.getAttribute("Abiadura");
-	                        String punteria9 = eElement.getAttribute("Punteria");
-	                        String defentza9 = eElement.getAttribute("Defentza");
-
-	                    }
-	                }
-	            }
 	            
 	            
 	           
