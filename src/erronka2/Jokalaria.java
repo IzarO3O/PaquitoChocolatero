@@ -13,7 +13,7 @@ import java.io.Serializable;
 
 //@XmlRootElement
 
-public class Jokalaria {
+public class Jokalaria implements Serializable {
 
 	//XmlMapper mapper = new XmlMapper();
 	
