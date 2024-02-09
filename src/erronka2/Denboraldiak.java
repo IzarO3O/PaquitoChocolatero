@@ -1381,14 +1381,23 @@ public class Denboraldiak extends JPanel {
 							}
 							
 							if (hamarra==true) {
-								Denb2GetSet Talde = new Denb2GetSet ();
+								Denb2GetSet TaldeBC = new Denb2GetSet ();
 								
 								Denb2GetSet.TaldeIzen = "Boston Celtics";
 								Denb2GetSet.Irabaziak = bci2;
 								Denb2GetSet.Galerak = bcg2;
 								Denb2GetSet.Berdina = bce2;
 								
-								den2BC.add("Boston Celtics");
+								Denb2GetSet TaldeBN = new Denb2GetSet ();
+								
+								Denb2GetSet.TaldeIzen = "Brooklyn Nets";
+								Denb2GetSet.Irabaziak = bni2;
+								Denb2GetSet.Galerak = bng2;
+								Denb2GetSet.Berdina = bne2;
+								
+								
+								
+							/*	den2BC.add("Boston Celtics");
 								den2BC.add(bci2);
 								den2BC.add(bcg2);
 								den2BC.add(bce2);
@@ -1434,7 +1443,7 @@ public class Denboraldiak extends JPanel {
 								den1[4].add(den1AH);
 
 								den1[5] = new ArrayList<>();
-								den1[5].add(den1CH);
+								den1[5].add(den1CH);*/
 								hamarra=false;
 							}
 							

@@ -229,10 +229,8 @@ public class FIBA extends JPanel {
                         // Check if the name matches the search term
 	                    if (eElement.getTextContent().equals(comboBox.getSelectedItem())) {
 	                        // Get attributes Abiadura, Punteria, and Defentza
-	                    	NodeList abiaduraElements = eElement.getElementsByTagName("Abiadura");
-	                    	Element abiaduraElement = (Element) abiaduraElements.item(1);
-	                    	String abiadura = abiaduraElement.getTextContent();
-	                    	//String abiadura = eElement.getAttribute("Abiadura");
+	                    	
+	                    	String abiadura = eElement.getAttribute("Abiadura");
 	                    	String punteria = eElement.getAttribute("Punteria");
 	                    	String defentza = eElement.getAttribute("Defentza");
 	                    	System.out.println(abiadura);
