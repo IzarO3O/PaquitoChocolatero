@@ -27,11 +27,16 @@ import javax.swing.JScrollBar;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+/**
+ * 
+ */
 public class Denboraldiak extends JPanel {
 
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
 	private boolean jaur3 = false;
-	boolean bi = false;
 	public static DefaultListModel model ;
 	private JTable table;
 	private JTable table_1;
@@ -82,14 +87,64 @@ public class Denboraldiak extends JPanel {
 	public int cbe2 = 0;
 	public int cbg2 = 0;
 	
-	public String [] denb1;
+	public int chi3 = 0;
+	public int che3 = 0;
+	public int chg3 = 0;
+	public int cci3 = 0;
+	public int cce3 = 0;
+	public int ccg3 = 0;
+	public int bci3 = 0;
+	public int bce3 = 0;
+	public int bcg3 = 0;
+	public int bni3 = 0;
+	public int bne3 = 0;
+	public int bng3 = 0;
+	public int ahi3 = 0;
+	public int ahe3 = 0;
+	public int ahg3 = 0;
+	public int cbi3 = 0;
+	public int cbe3 = 0;
+	public int cbg3 = 0;
+	
+	public int chi4 = 0;
+	public int che4 = 0;
+	public int chg4 = 0;
+	public int cci4 = 0;
+	public int cce4 = 0;
+	public int ccg4 = 0;
+	public int bci4 = 0;
+	public int bce4 = 0;
+	public int bcg4 = 0;
+	public int bni4 = 0;
+	public int bne4 = 0;
+	public int bng4 = 0;
+	public int ahi4 = 0;
+	public int ahe4 = 0;
+	public int ahg4 = 0;
+	public int cbi4 = 0;
+	public int cbe4 = 0;
+	public int cbg4 = 0;
+	
+	public int chi5 = 0;
+	public int che5 = 0;
+	public int chg5 = 0;
+	public int cci5 = 0;
+	public int cce5 = 0;
+	public int ccg5 = 0;
+	public int bci5 = 0;
+	public int bce5 = 0;
+	public int bcg5 = 0;
+	public int bni5 = 0;
+	public int bne5 = 0;
+	public int bng5 = 0;
+	public int ahi5 = 0;
+	public int ahe5 = 0;
+	public int ahg5 = 0;
+	public int cbi5 = 0;
+	public int cbe5 = 0;
+	public int cbg5 = 0;
+	
 	public static JList list;
-	private JTextField textField;
-	private JTextField textField1;
-	private JTextField textField2;
-	private JTextField textField3;
-	private JTextField textField4;
-	private JTextField textField5;
 	private JButton btnNewButton_3;
 	private DefaultComboBoxModel comboBoxModel;
 	private DefaultComboBoxModel comboBoxModel1;
@@ -103,27 +158,56 @@ public class Denboraldiak extends JPanel {
 	private JTextField textField_4;
 	private JTextField textField_5;
 	private JTextField textField_6;
-	public ArrayList den1[];
-	public ArrayList den1BC[];
-	public ArrayList den1BN[];
-	public ArrayList den1CB[];
-	public ArrayList den1CC[];
-	public ArrayList den1AH[];
-	public ArrayList den1CH[];
+	
+	public static ArrayList<ArrayList<Object>>[] den1 = new ArrayList[6];
+	public static ArrayList<Object> den1BC = new ArrayList<>();
+	public static ArrayList<Object> den1BN = new ArrayList<>();
+	public static ArrayList<Object> den1CB = new ArrayList<>();
+	public static ArrayList<Object> den1CC = new ArrayList<>();
+	public static ArrayList<Object> den1AH = new ArrayList<>();
+	public static ArrayList<Object> den1CH = new ArrayList<>();
+	public static ArrayList<ArrayList<Object>>[] den2 = new ArrayList[6];
+	public static ArrayList<Object> den2BC = new ArrayList<>();
+	public static ArrayList<Object> den2BN = new ArrayList<>();
+	public static ArrayList<Object> den2CB = new ArrayList<>();
+	public static ArrayList<Object> den2CC = new ArrayList<>();
+	public static ArrayList<Object> den2AH = new ArrayList<>();
+	public static ArrayList<Object> den2CH = new ArrayList<>();
+	public static ArrayList<ArrayList<Object>>[] den3 = new ArrayList[6];
+	public static ArrayList<Object> den3BC = new ArrayList<>();
+	public static ArrayList<Object> den3BN = new ArrayList<>();
+	public static ArrayList<Object> den3CB = new ArrayList<>();
+	public static ArrayList<Object> den3CC = new ArrayList<>();
+	public static ArrayList<Object> den3AH = new ArrayList<>();
+	public static ArrayList<Object> den3CH = new ArrayList<>();
+	public static ArrayList<ArrayList<Object>>[] den4 = new ArrayList[6];
+	public static ArrayList<Object> den4BC = new ArrayList<>();
+	public static ArrayList<Object> den4BN = new ArrayList<>();
+	public static ArrayList<Object> den4CB = new ArrayList<>();
+	public static ArrayList<Object> den4CC = new ArrayList<>();
+	public static ArrayList<Object> den4AH = new ArrayList<>();
+	public static ArrayList<Object> den4CH = new ArrayList<>();
+	public static ArrayList<ArrayList<Object>>[] den5 = new ArrayList[6];
+	public static ArrayList<Object> den5BC = new ArrayList<>();
+	public static ArrayList<Object> den5BN = new ArrayList<>();
+	public static ArrayList<Object> den5CB = new ArrayList<>();
+	public static ArrayList<Object> den5CC = new ArrayList<>();
+	public static ArrayList<Object> den5AH = new ArrayList<>();
+	public static ArrayList<Object> den5CH = new ArrayList<>();
+	
 	boolean batDen = false;
 	boolean biDen = false;
 	boolean hiruDen = false;
 	boolean lauDen = false;
 	boolean bostDen = false;
+	boolean hamarra = false;
 
-	String A = null;
-	String B = null;
-	String C = null;
-	String D = null;
-	String E = null;
-	String F = null;
-
-	
+	String A = "";
+	String B = "";
+	String C = "";
+	String D = "";
+	String E = "";
+	String F = "";
 
 	/**
 	 * Create the panel.
@@ -131,42 +215,6 @@ public class Denboraldiak extends JPanel {
 	
 	public Denboraldiak() {
 		setLayout(null);
-		
-		/*JPanel panelki = new JPanel();
-		panelki.setBounds(32, 34, 306, 333);
-		add(panelki);
-		panelki.setLayout(null);
-		
-		
-		
-		JSpinner spinner = new JSpinner();
-		spinner.setBounds(51, 110, 41, 20);
-		panelki.add(spinner);
-		
-		JSpinner spinner_1 = new JSpinner();
-		spinner_1.setBounds(193, 110, 41, 20);
-		panelki.add(spinner_1);
-		
-		JSpinner spinner_2 = new JSpinner();
-		spinner_2.setBounds(51, 191, 41, 20);
-		panelki.add(spinner_2);
-		
-		JSpinner spinner_3 = new JSpinner();
-		spinner_3.setBounds(193, 190, 41, 20);
-		panelki.add(spinner_3);
-		
-		JSpinner spinner_4 = new JSpinner();
-		spinner_4.setBounds(51, 266, 41, 20);
-		panelki.add(spinner_4);
-		
-		JSpinner spinner_5 = new JSpinner();
-		spinner_5.setBounds(193, 266, 41, 20);
-		panelki.add(spinner_5);
-		
-		JButton btnNewButton_4 = new JButton("Gorde");
-		btnNewButton_4.setBounds(190, 296, 85, 27);
-		panelki.add(btnNewButton_4);
-		bigade();	*/
 		
 		menu();
 	}
@@ -341,20 +389,50 @@ public class Denboraldiak extends JPanel {
 				comboBox_3.setSelectedItem(D);
 				comboBox_4.setSelectedItem(E);
 				comboBox_5.setSelectedItem(F);
+				
+				spinner.setValue(0);
+				spinner_1.setValue(0);
+				spinner_2.setValue(0);
+				spinner_3.setValue(0);
+				spinner_4.setValue(0);
+				spinner_5.setValue(0);
+
 			}
 				
-			if (comboBox_6.getSelectedItem()=="2. Jaurdunaldia"&&jaur3==false||comboBox_6.getSelectedItem()=="3. Jaurdunaldia"&&jaur3==false||comboBox_6.getSelectedItem()=="4. Jaurdunaldia"&&jaur3==false||comboBox_6.getSelectedItem()=="5. Jaurdunaldia"&&jaur3==false||comboBox_6.getSelectedItem()=="6. Jaurdunaldia"&&jaur3==false||comboBox_6.getSelectedItem()=="7. Jaurdunaldia"&&jaur3==false||comboBox_6.getSelectedItem()=="8. Jaurdunaldia"&&jaur3==false||comboBox_6.getSelectedItem()=="9. Jaurdunaldia"&&jaur3==false||comboBox_6.getSelectedItem()=="10. Jaurdunaldia"&&jaur3==false) {
+			else if (comboBox_6.getSelectedItem()=="2. Jaurdunaldia"&&jaur3==false||comboBox_6.getSelectedItem()=="3. Jaurdunaldia"&&jaur3==false||comboBox_6.getSelectedItem()=="4. Jaurdunaldia"&&jaur3==false||comboBox_6.getSelectedItem()=="5. Jaurdunaldia"&&jaur3==false||comboBox_6.getSelectedItem()=="6. Jaurdunaldia"&&jaur3==false||comboBox_6.getSelectedItem()=="7. Jaurdunaldia"&&jaur3==false||comboBox_6.getSelectedItem()=="8. Jaurdunaldia"&&jaur3==false||comboBox_6.getSelectedItem()=="9. Jaurdunaldia"&&jaur3==false||comboBox_6.getSelectedItem()=="10. Jaurdunaldia"&&jaur3==false) {
 				JOptionPane.showMessageDialog(new JFrame(), "Lehenengo jaurdunaldua amaitu behar duzu","Error",JOptionPane.WARNING_MESSAGE);
 
 			}else if (comboBox_6.getSelectedItem()=="2. Jaurdunaldia"&&jaur3==true) {
 				
-				boolean bi = true;
 				
-				comboBox.setSelectedItem(B);
-				comboBox_1.setSelectedItem(A);
+				comboBox.setSelectedItem(E);
+				comboBox_1.setSelectedItem(C);
 				comboBox_2.setSelectedItem(D);
-				comboBox_3.setSelectedItem(C);
+				comboBox_3.setSelectedItem(B);
 				comboBox_4.setSelectedItem(F);
+				comboBox_5.setSelectedItem(A);
+
+				spinner.setEnabled(true);
+				spinner_1.setEnabled(true);
+				spinner_2.setEnabled(true);
+				spinner_3.setEnabled(true);
+				spinner_4.setEnabled(true);
+				spinner_5.setEnabled(true);
+				
+				spinner.setValue(0);
+				spinner_1.setValue(0);
+				spinner_2.setValue(0);
+				spinner_3.setValue(0);
+				spinner_4.setValue(0);
+				spinner_5.setValue(0);
+				
+				
+			}else if (comboBox_6.getSelectedItem()=="3. Jaurdunaldia"&&jaur3==true) {
+				comboBox.setSelectedItem(A);
+				comboBox_1.setSelectedItem(D);
+				comboBox_2.setSelectedItem(C);
+				comboBox_3.setSelectedItem(F);
+				comboBox_4.setSelectedItem(B);
 				comboBox_5.setSelectedItem(E);
 
 				spinner.setEnabled(true);
@@ -364,9 +442,105 @@ public class Denboraldiak extends JPanel {
 				spinner_4.setEnabled(true);
 				spinner_5.setEnabled(true);
 				
-				if (comboBox_6.getSelectedItem()=="3. Jaurdunaldia"&&bi==true) {
+				spinner.setValue(0);
+				spinner_1.setValue(0);
+				spinner_2.setValue(0);
+				spinner_3.setValue(0);
+				spinner_4.setValue(0);
+				spinner_5.setValue(0);
+				
+				
+			
+			}else if (comboBox_6.getSelectedItem()=="4. Jaurdunaldia"&&jaur3==true) {
+				
+				comboBox.setSelectedItem(E);
+				comboBox_1.setSelectedItem(D);
+				comboBox_2.setSelectedItem(C);
+				comboBox_3.setSelectedItem(A);
+				comboBox_4.setSelectedItem(F);
+				comboBox_5.setSelectedItem(B);
+
+				spinner.setEnabled(true);
+				spinner_1.setEnabled(true);
+				spinner_2.setEnabled(true);
+				spinner_3.setEnabled(true);
+				spinner_4.setEnabled(true);
+				spinner_5.setEnabled(true);
+				
+				spinner.setValue(0);
+				spinner_1.setValue(0);
+				spinner_2.setValue(0);
+				spinner_3.setValue(0);
+				spinner_4.setValue(0);
+				spinner_5.setValue(0);
+				
+			}else if (comboBox_6.getSelectedItem()=="5. Jaurdunaldia"&&jaur3==true) {
 				comboBox.setSelectedItem(B);
+				comboBox_1.setSelectedItem(C);
+				comboBox_2.setSelectedItem(D);
+				comboBox_3.setSelectedItem(F);
+				comboBox_4.setSelectedItem(A);
+				comboBox_5.setSelectedItem(E);
+
+				spinner.setEnabled(true);
+				spinner_1.setEnabled(true);
+				spinner_2.setEnabled(true);
+				spinner_3.setEnabled(true);
+				spinner_4.setEnabled(true);
+				spinner_5.setEnabled(true);
+				
+				spinner.setValue(0);
+				spinner_1.setValue(0);
+				spinner_2.setValue(0);
+				spinner_3.setValue(0);
+				spinner_4.setValue(0);
+				spinner_5.setValue(0);
+				
+			}else if (comboBox_6.getSelectedItem()=="6. Jaurdunaldia"&&jaur3==true) {
+				comboBox.setSelectedItem(F);
 				comboBox_1.setSelectedItem(E);
+				comboBox_2.setSelectedItem(D);
+				comboBox_3.setSelectedItem(C);
+				comboBox_4.setSelectedItem(B);
+				comboBox_5.setSelectedItem(A);
+
+				spinner.setEnabled(true);
+				spinner_1.setEnabled(true);
+				spinner_2.setEnabled(true);
+				spinner_3.setEnabled(true);
+				spinner_4.setEnabled(true);
+				spinner_5.setEnabled(true);
+				
+				spinner.setValue(0);
+				spinner_1.setValue(0);
+				spinner_2.setValue(0);
+				spinner_3.setValue(0);
+				spinner_4.setValue(0);
+				spinner_5.setValue(0);
+			}else if (comboBox_6.getSelectedItem()=="7. Jaurdunaldia"&&jaur3==true) {
+				comboBox.setSelectedItem(C);
+				comboBox_1.setSelectedItem(E);
+				comboBox_2.setSelectedItem(A);
+				comboBox_3.setSelectedItem(F);
+				comboBox_4.setSelectedItem(B);
+				comboBox_5.setSelectedItem(D);
+
+				spinner.setEnabled(true);
+				spinner_1.setEnabled(true);
+				spinner_2.setEnabled(true);
+				spinner_3.setEnabled(true);
+				spinner_4.setEnabled(true);
+				spinner_5.setEnabled(true);
+				
+				spinner.setValue(0);
+				spinner_1.setValue(0);
+				spinner_2.setValue(0);
+				spinner_3.setValue(0);
+				spinner_4.setValue(0);
+				spinner_5.setValue(0);
+			}else if (comboBox_6.getSelectedItem()=="8. Jaurdunaldia"&&jaur3==true) {
+				comboBox.setSelectedItem(E);
+				comboBox_1.setSelectedItem(B);
 				comboBox_2.setSelectedItem(D);
 				comboBox_3.setSelectedItem(A);
 				comboBox_4.setSelectedItem(F);
@@ -378,11 +552,60 @@ public class Denboraldiak extends JPanel {
 				spinner_3.setEnabled(true);
 				spinner_4.setEnabled(true);
 				spinner_5.setEnabled(true);
-				}
-			}else if (comboBox_6.getSelectedItem()!="2. Jaurdunaldia"&&bi==false) {
-				JOptionPane.showMessageDialog(new JFrame(), "Pasatu 2. Jaurdunalditik lehenengo","Error",JOptionPane.WARNING_MESSAGE);
+				
+				spinner.setValue(0);
+				spinner_1.setValue(0);
+				spinner_2.setValue(0);
+				spinner_3.setValue(0);
+				spinner_4.setValue(0);
+				spinner_5.setValue(0);
+			}else if (comboBox_6.getSelectedItem()=="9. Jaurdunaldia"&&jaur3==true) {
+				comboBox.setSelectedItem(A);
+				comboBox_1.setSelectedItem(C);
+				comboBox_2.setSelectedItem(B);
+				comboBox_3.setSelectedItem(F);
+				comboBox_4.setSelectedItem(D);
+				comboBox_5.setSelectedItem(E);
 
-			} else {
+				spinner.setEnabled(true);
+				spinner_1.setEnabled(true);
+				spinner_2.setEnabled(true);
+				spinner_3.setEnabled(true);
+				spinner_4.setEnabled(true);
+				spinner_5.setEnabled(true);
+				
+				spinner.setValue(0);
+				spinner_1.setValue(0);
+				spinner_2.setValue(0);
+				spinner_3.setValue(0);
+				spinner_4.setValue(0);
+				spinner_5.setValue(0);
+			}else if (comboBox_6.getSelectedItem()=="10. Jaurdunaldia"&&jaur3==true) {
+				hamarra=true;
+				comboBox.setSelectedItem(E);
+				comboBox_1.setSelectedItem(A);
+				comboBox_2.setSelectedItem(C);
+				comboBox_3.setSelectedItem(B);
+				comboBox_4.setSelectedItem(F);
+				comboBox_5.setSelectedItem(D);
+
+				spinner.setEnabled(true);
+				spinner_1.setEnabled(true);
+				spinner_2.setEnabled(true);
+				spinner_3.setEnabled(true);
+				spinner_4.setEnabled(true);
+				spinner_5.setEnabled(true);
+				
+				spinner.setValue(0);
+				spinner_1.setValue(0);
+				spinner_2.setValue(0);
+				spinner_3.setValue(0);
+				spinner_4.setValue(0);
+				spinner_5.setValue(0);
+			}
+			
+			
+			else {
 				JOptionPane.showMessageDialog(new JFrame(), "ajf","Error",JOptionPane.WARNING_MESSAGE);
 
 			}
@@ -622,33 +845,26 @@ public class Denboraldiak extends JPanel {
 			
 		bni1=bni1+1;bcg1=bcg1+1;cci1=cci1+1; cbg1=cbg1+1; ahg1=ahg1+1; chi1=chi1+1;
 		
-		ArrayList<ArrayList<Object>>[] den1 = new ArrayList[6];
-		ArrayList<Object> den1BC = new ArrayList<>();
 		den1BC.add("Boston Celtics");
 		den1BC.add(bci1);
 		den1BC.add(bcg1);
 
-		ArrayList<Object> den1BN = new ArrayList<>();
 		den1BN.add("Brooklyn Nets");
 		den1BN.add(bni1);
 		den1BN.add(bng1);
 
-		ArrayList<Object> den1CB = new ArrayList<>();
 		den1CB.add("Chicago Bulls");
 		den1CB.add(cbi1);
 		den1CB.add(cbg1);
 
-		ArrayList<Object> den1CC = new ArrayList<>();
 		den1CC.add("Cleveland Cavaliers");
 		den1CC.add(cci1);
 		den1CC.add(ccg1);
 
-		ArrayList<Object> den1AH = new ArrayList<>();
 		den1AH.add("Atlanta Hawks");
 		den1AH.add(ahi1);
 		den1AH.add(ahg1);
 
-		ArrayList<Object> den1CH = new ArrayList<>();
 		den1CH.add("Charlotte Hornets");
 		den1CH.add(chi1);
 		den1CH.add(chg1);
@@ -874,7 +1090,17 @@ public class Denboraldiak extends JPanel {
 						JOptionPane.showMessageDialog(new JFrame(), "Ezin dira puntu negatiboak euki","Error",JOptionPane.WARNING_MESSAGE);
 
 					}else {
+						btnNewButton_2_1.setEnabled(false);
+
 						if (biDen=true) {
+							
+							A = (String) comboBox.getSelectedItem();
+							B = (String) comboBox_1.getSelectedItem();
+							C = (String) comboBox_2.getSelectedItem();
+							D = (String) comboBox_3.getSelectedItem();
+							E = (String) comboBox_4.getSelectedItem();
+							F = (String) comboBox_5.getSelectedItem();
+
 							
 							spinner.setEnabled(false);
 							spinner_1.setEnabled(false);
@@ -883,23 +1109,336 @@ public class Denboraldiak extends JPanel {
 							spinner_4.setEnabled(false);
 							spinner_5.setEnabled(false);
 							
-							
+							// Bigarren denboraldian lehenengo comboBox-aren kasuak
 							if (comboBox.getSelectedItem().equals("Boston Celtics")&&(int)spinner.getValue()>(int)spinner_1.getValue()) {
 								bci2= bci2+1;
 							}else if (comboBox.getSelectedItem().equals("Boston Celtics")&&(int)spinner.getValue()<(int)spinner_1.getValue()) {
-								bce2= bce2+1;
+								bcg2= bcg2+1;
 							}else if(comboBox.getSelectedItem().equals("Boston Celtics")&&(int)spinner.getValue()==(int)spinner_1.getValue()){
 								bce2= bce2+1;
+							}
+							if (comboBox.getSelectedItem().equals("Brooklyn Nets")&&(int)spinner.getValue()>(int)spinner_1.getValue()) {
+								bni2= bni2+1;
+							}else if (comboBox.getSelectedItem().equals("Brooklyn Nets")&&(int)spinner.getValue()<(int)spinner_1.getValue()) {
+								bng2= bng2+1;
+							}else if(comboBox.getSelectedItem().equals("Brooklyn Nets")&&(int)spinner.getValue()==(int)spinner_1.getValue()){
+								bne2= bne2+1;
+							}
+							if (comboBox.getSelectedItem().equals("Chicago Bulls")&&(int)spinner.getValue()>(int)spinner_1.getValue()) {
+								cbi2= cbi2+1;
+							}else if (comboBox.getSelectedItem().equals("Chicago Bulls")&&(int)spinner.getValue()<(int)spinner_1.getValue()) {
+								cbg2= cbg2+1;
+							}else if(comboBox.getSelectedItem().equals("Chicago Bulls")&&(int)spinner.getValue()==(int)spinner_1.getValue()){
+								cbe2= cbe2+1;
 							}
 							if (comboBox.getSelectedItem().equals("Cleveland Cavaliers")&&(int)spinner.getValue()>(int)spinner_1.getValue()) {
 								cci2= cci2+1;
 							}else if (comboBox.getSelectedItem().equals("Cleveland Cavaliers")&&(int)spinner.getValue()<(int)spinner_1.getValue()) {
-								cce2= cce2+1;
+								ccg2= ccg2+1;
 							}else if(comboBox.getSelectedItem().equals("Cleveland Cavaliers")&&(int)spinner.getValue()==(int)spinner_1.getValue()){
 								cce2= cce2+1;
 							}
+							if (comboBox.getSelectedItem().equals("Atlanta Hawks")&&(int)spinner.getValue()>(int)spinner_1.getValue()) {
+								ahi2= ahi2+1;
+							}else if (comboBox.getSelectedItem().equals("Atlanta Hawks")&&(int)spinner.getValue()<(int)spinner_1.getValue()) {
+								ahg2= ahg2+1;
+							}else if(comboBox.getSelectedItem().equals("Atlanta Hawks")&&(int)spinner.getValue()==(int)spinner_1.getValue()){
+								ahe2= ahe2+1;
+							}
+							if (comboBox.getSelectedItem().equals("Charlotte Hornets")&&(int)spinner.getValue()>(int)spinner_1.getValue()) {
+								chi2= chi2+1;
+							}else if (comboBox.getSelectedItem().equals("Charlotte Hornets")&&(int)spinner.getValue()<(int)spinner_1.getValue()) {
+								chg2= chg2+1;
+							}else if(comboBox.getSelectedItem().equals("Charlotte Hornets")&&(int)spinner.getValue()==(int)spinner_1.getValue()){
+								che2= che2+1;
+							}
+							
+							
+							// Bigarren denboraldian bigarren comboBox-aren kasuak
+							if (comboBox_1.getSelectedItem().equals("Boston Celtics")&&(int)spinner_1.getValue()>(int)spinner.getValue()) {
+								bci2= bci2+1;
+							}else if (comboBox_1.getSelectedItem().equals("Boston Celtics")&&(int)spinner_1.getValue()<(int)spinner.getValue()) {
+								bcg2= bcg2+1;
+							}else if(comboBox_1.getSelectedItem().equals("Boston Celtics")&&(int)spinner_1.getValue()==(int)spinner.getValue()){
+								bce2= bce2+1;
+							}
+							if (comboBox_1.getSelectedItem().equals("Brooklyn Nets")&&(int)spinner_1.getValue()>(int)spinner.getValue()) {
+								bni2= bni2+1;
+							}else if (comboBox_1.getSelectedItem().equals("Brooklyn Nets")&&(int)spinner_1.getValue()<(int)spinner.getValue()) {
+								bng2= bng2+1;
+							}else if(comboBox_1.getSelectedItem().equals("Brooklyn Nets")&&(int)spinner_1.getValue()==(int)spinner.getValue()){
+								bne2= bne2+1;
+							}
+							if (comboBox_1.getSelectedItem().equals("Chicago Bulls")&&(int)spinner_1.getValue()>(int)spinner.getValue()) {
+								cbi2= cbi2+1;
+							}else if (comboBox_1.getSelectedItem().equals("Chicago Bulls")&&(int)spinner_1.getValue()<(int)spinner.getValue()) {
+								cbg2= cbg2+1;
+							}else if(comboBox_1.getSelectedItem().equals("Chicago Bulls")&&(int)spinner_1.getValue()==(int)spinner.getValue()){
+								cbe2= cbe2+1;
+							}
+							if (comboBox_1.getSelectedItem().equals("Cleveland Cavaliers")&&(int)spinner_1.getValue()>(int)spinner.getValue()) {
+								cci2= cci2+1;
+							}else if (comboBox_1.getSelectedItem().equals("Cleveland Cavaliers")&&(int)spinner_1.getValue()<(int)spinner.getValue()) {
+								ccg2= ccg2+1;
+							}else if(comboBox_1.getSelectedItem().equals("Cleveland Cavaliers")&&(int)spinner_1.getValue()==(int)spinner.getValue()){
+								cce2= cce2+1;
+							}
+							if (comboBox_1.getSelectedItem().equals("Atlanta Hawks")&&(int)spinner_1.getValue()>(int)spinner.getValue()) {
+								ahi2= ahi2+1;
+							}else if (comboBox_1.getSelectedItem().equals("Atlanta Hawks")&&(int)spinner_1.getValue()<(int)spinner.getValue()) {
+								ahg2= ahg2+1;
+							}else if(comboBox_1.getSelectedItem().equals("Atlanta Hawks")&&(int)spinner_1.getValue()==(int)spinner.getValue()){
+								ahe2= ahe2+1;
+							}
+							if (comboBox_1.getSelectedItem().equals("Charlotte Hornets")&&(int)spinner_1.getValue()>(int)spinner.getValue()) {
+								chi2= chi2+1;
+							}else if (comboBox_1.getSelectedItem().equals("Charlotte Hornets")&&(int)spinner_1.getValue()<(int)spinner.getValue()) {
+								chg2= chg2+1;
+							}else if(comboBox_1.getSelectedItem().equals("Charlotte Hornets")&&(int)spinner_1.getValue()==(int)spinner.getValue()){
+								che2= che2+1;
+							}
+
+							
+							// Bigarren denboraldian hirugarren comboBox-aren kasuak
+							if (comboBox_2.getSelectedItem().equals("Boston Celtics")&&(int)spinner_2.getValue()>(int)spinner_3.getValue()) {
+								bci2= bci2+1;
+							}else if (comboBox_2.getSelectedItem().equals("Boston Celtics")&&(int)spinner_2.getValue()<(int)spinner_3.getValue()) {
+								bcg2= bcg2+1;
+							}else if(comboBox_2.getSelectedItem().equals("Boston Celtics")&&(int)spinner_2.getValue()==(int)spinner_3.getValue()){
+								bce2= bce2+1;
+							}
+							if (comboBox_2.getSelectedItem().equals("Brooklyn Nets")&&(int)spinner_2.getValue()>(int)spinner_3.getValue()) {
+								bni2= bni2+1;
+							}else if (comboBox_2.getSelectedItem().equals("Brooklyn Nets")&&(int)spinner_2.getValue()<(int)spinner_3.getValue()) {
+								bng2= bng2+1;
+							}else if(comboBox_2.getSelectedItem().equals("Brooklyn Nets")&&(int)spinner_2.getValue()==(int)spinner_3.getValue()){
+								bne2= bne2+1;
+							}
+							if (comboBox_2.getSelectedItem().equals("Chicago Bulls")&&(int)spinner_2.getValue()>(int)spinner_3.getValue()) {
+								cbi2= cbi2+1;
+							}else if (comboBox_2.getSelectedItem().equals("Chicago Bulls")&&(int)spinner_2.getValue()<(int)spinner_3.getValue()) {
+								cbg2= cbg2+1;
+							}else if(comboBox_2.getSelectedItem().equals("Chicago Bulls")&&(int)spinner_2.getValue()==(int)spinner_3.getValue()){
+								cbe2= cbe2+1;
+							}
+							if (comboBox_2.getSelectedItem().equals("Cleveland Cavaliers")&&(int)spinner_2.getValue()>(int)spinner_3.getValue()) {
+								cci2= cci2+1;
+							}else if (comboBox_2.getSelectedItem().equals("Cleveland Cavaliers")&&(int)spinner_2.getValue()<(int)spinner_3.getValue()) {
+								ccg2= ccg2+1;
+							}else if(comboBox_2.getSelectedItem().equals("Cleveland Cavaliers")&&(int)spinner_2.getValue()==(int)spinner_3.getValue()){
+								cce2= cce2+1;
+							}
+							if (comboBox_2.getSelectedItem().equals("Atlanta Hawks")&&(int)spinner_2.getValue()>(int)spinner_3.getValue()) {
+								ahi2= ahi2+1;
+							}else if (comboBox_2.getSelectedItem().equals("Atlanta Hawks")&&(int)spinner_2.getValue()<(int)spinner_3.getValue()) {
+								ahg2= ahg2+1;
+							}else if(comboBox_2.getSelectedItem().equals("Atlanta Hawks")&&(int)spinner_2.getValue()==(int)spinner_3.getValue()){
+								ahe2= ahe2+1;
+							}
+							if (comboBox_2.getSelectedItem().equals("Charlotte Hornets")&&(int)spinner_2.getValue()>(int)spinner_3.getValue()) {
+								chi2= chi2+1;
+							}else if (comboBox_2.getSelectedItem().equals("Charlotte Hornets")&&(int)spinner_2.getValue()<(int)spinner_3.getValue()) {
+								chg2= chg2+1;
+							}else if(comboBox_2.getSelectedItem().equals("Charlotte Hornets")&&(int)spinner_2.getValue()==(int)spinner_3.getValue()){
+								che2= che2+1;
+							}
 							
 
+							// Bigarren denboraldian laugarren comboBox-aren kasuak
+							if (comboBox_3.getSelectedItem().equals("Boston Celtics")&&(int)spinner_3.getValue()>(int)spinner_2.getValue()) {
+								bci2= bci2+1;
+							}else if (comboBox_3.getSelectedItem().equals("Boston Celtics")&&(int)spinner_3.getValue()<(int)spinner_2.getValue()) {
+								bcg2= bcg2+1;
+							}else if(comboBox_3.getSelectedItem().equals("Boston Celtics")&&(int)spinner_3.getValue()==(int)spinner_2.getValue()){
+								bce2= bce2+1;
+							}
+							if (comboBox_3.getSelectedItem().equals("Brooklyn Nets")&&(int)spinner_3.getValue()>(int)spinner_2.getValue()) {
+								bni2= bni2+1;
+							}else if (comboBox_3.getSelectedItem().equals("Brooklyn Nets")&&(int)spinner_3.getValue()<(int)spinner_2.getValue()) {
+								bng2= bng2+1;
+							}else if(comboBox_3.getSelectedItem().equals("Brooklyn Nets")&&(int)spinner_3.getValue()==(int)spinner_2.getValue()){
+								bne2= bne2+1;
+							}
+							if (comboBox_3.getSelectedItem().equals("Chicago Bulls")&&(int)spinner_3.getValue()>(int)spinner_2.getValue()) {
+								cbi2= cbi2+1;
+							}else if (comboBox_3.getSelectedItem().equals("Chicago Bulls")&&(int)spinner_3.getValue()<(int)spinner_2.getValue()) {
+								cbg2= cbg2+1;
+							}else if(comboBox_3.getSelectedItem().equals("Chicago Bulls")&&(int)spinner_3.getValue()==(int)spinner_2.getValue()){
+								cbe2= cbe2+1;
+							}
+							if (comboBox_3.getSelectedItem().equals("Cleveland Cavaliers")&&(int)spinner_3.getValue()>(int)spinner_2.getValue()) {
+								cci2= cci2+1;
+							}else if (comboBox_3.getSelectedItem().equals("Cleveland Cavaliers")&&(int)spinner_3.getValue()<(int)spinner_2.getValue()) {
+								ccg2= ccg2+1;
+							}else if(comboBox_3.getSelectedItem().equals("Cleveland Cavaliers")&&(int)spinner_3.getValue()==(int)spinner_2.getValue()){
+								cce2= cce2+1;
+							}
+							if (comboBox_3.getSelectedItem().equals("Atlanta Hawks")&&(int)spinner_3.getValue()>(int)spinner_2.getValue()) {
+								ahi2= ahi2+1;
+							}else if (comboBox_3.getSelectedItem().equals("Atlanta Hawks")&&(int)spinner_3.getValue()<(int)spinner_2.getValue()) {
+								ahg2= ahg2+1;
+							}else if(comboBox_3.getSelectedItem().equals("Atlanta Hawks")&&(int)spinner_3.getValue()==(int)spinner_2.getValue()){
+								ahe2= ahe2+1;
+							}
+							if (comboBox_3.getSelectedItem().equals("Charlotte Hornets")&&(int)spinner_3.getValue()>(int)spinner_2.getValue()) {
+								chi2= chi2+1;
+							}else if (comboBox_3.getSelectedItem().equals("Charlotte Hornets")&&(int)spinner_3.getValue()<(int)spinner_2.getValue()) {
+								chg2= chg2+1;
+							}else if(comboBox_3.getSelectedItem().equals("Charlotte Hornets")&&(int)spinner_3.getValue()==(int)spinner_2.getValue()){
+								che2= che2+1;
+							}
+							
+							
+
+							// Bigarren denboraldian bostgarren comboBox-aren kasuak
+							if (comboBox_4.getSelectedItem().equals("Boston Celtics")&&(int)spinner_4.getValue()>(int)spinner_5.getValue()) {
+								bci2= bci2+1;
+							}else if (comboBox_4.getSelectedItem().equals("Boston Celtics")&&(int)spinner_4.getValue()<(int)spinner_5.getValue()) {
+								bcg2= bcg2+1;
+							}else if(comboBox_4.getSelectedItem().equals("Boston Celtics")&&(int)spinner_4.getValue()==(int)spinner_5.getValue()){
+								bce2= bce2+1;
+							}
+							if (comboBox_4.getSelectedItem().equals("Brooklyn Nets")&&(int)spinner_4.getValue()>(int)spinner_5.getValue()) {
+								bni2= bni2+1;
+							}else if (comboBox_4.getSelectedItem().equals("Brooklyn Nets")&&(int)spinner_4.getValue()<(int)spinner_5.getValue()) {
+								bng2= bng2+1;
+							}else if(comboBox_4.getSelectedItem().equals("Brooklyn Nets")&&(int)spinner_4.getValue()==(int)spinner_5.getValue()){
+								bne2= bne2+1;
+							}
+							if (comboBox_4.getSelectedItem().equals("Chicago Bulls")&&(int)spinner_4.getValue()>(int)spinner_5.getValue()) {
+								cbi2= cbi2+1;
+							}else if (comboBox_4.getSelectedItem().equals("Chicago Bulls")&&(int)spinner_4.getValue()<(int)spinner_5.getValue()) {
+								cbg2= cbg2+1;
+							}else if(comboBox_4.getSelectedItem().equals("Chicago Bulls")&&(int)spinner_4.getValue()==(int)spinner_5.getValue()){
+								cbe2= cbe2+1;
+							}
+							if (comboBox_4.getSelectedItem().equals("Cleveland Cavaliers")&&(int)spinner_4.getValue()>(int)spinner_5.getValue()) {
+								cci2= cci2+1;
+							}else if (comboBox_4.getSelectedItem().equals("Cleveland Cavaliers")&&(int)spinner_4.getValue()<(int)spinner_5.getValue()) {
+								ccg2= ccg2+1;
+							}else if(comboBox_4.getSelectedItem().equals("Cleveland Cavaliers")&&(int)spinner_4.getValue()==(int)spinner_5.getValue()){
+								cce2= cce2+1;
+							}
+							if (comboBox_4.getSelectedItem().equals("Atlanta Hawks")&&(int)spinner_4.getValue()>(int)spinner_5.getValue()) {
+								ahi2= ahi2+1;
+							}else if (comboBox_4.getSelectedItem().equals("Atlanta Hawks")&&(int)spinner_4.getValue()<(int)spinner_5.getValue()) {
+								ahg2= ahg2+1;
+							}else if(comboBox_4.getSelectedItem().equals("Atlanta Hawks")&&(int)spinner_4.getValue()==(int)spinner_5.getValue()){
+								ahe2= ahe2+1;
+							}
+							if (comboBox_4.getSelectedItem().equals("Charlotte Hornets")&&(int)spinner_4.getValue()>(int)spinner_5.getValue()) {
+								chi2= chi2+1;
+							}else if (comboBox_4.getSelectedItem().equals("Charlotte Hornets")&&(int)spinner_4.getValue()<(int)spinner_5.getValue()) {
+								chg2= chg2+1;
+							}else if(comboBox_4.getSelectedItem().equals("Charlotte Hornets")&&(int)spinner_4.getValue()==(int)spinner_5.getValue()){
+								che2= che2+1;
+							}
+							
+							
+							
+							// Bigarren denboraldian seigarren comboBox-aren kasuak
+							if (comboBox_5.getSelectedItem().equals("Boston Celtics")&&(int)spinner_5.getValue()>(int)spinner_4.getValue()) {
+								bci2= bci2+1;
+							}else if (comboBox_5.getSelectedItem().equals("Boston Celtics")&&(int)spinner_5.getValue()<(int)spinner_4.getValue()) {
+								bcg2= bcg2+1;
+							}else if(comboBox_5.getSelectedItem().equals("Boston Celtics")&&(int)spinner_5.getValue()==(int)spinner_4.getValue()){
+								bce2= bce2+1;
+							}
+							if (comboBox_5.getSelectedItem().equals("Brooklyn Nets")&&(int)spinner_5.getValue()>(int)spinner_4.getValue()) {
+								bni2= bni2+1;
+							}else if (comboBox_5.getSelectedItem().equals("Brooklyn Nets")&&(int)spinner_5.getValue()<(int)spinner_4.getValue()) {
+								bng2= bng2+1;
+							}else if(comboBox_5.getSelectedItem().equals("Brooklyn Nets")&&(int)spinner_5.getValue()==(int)spinner_4.getValue()){
+								bne2= bne2+1;
+							}
+							if (comboBox_5.getSelectedItem().equals("Chicago Bulls")&&(int)spinner_5.getValue()>(int)spinner_4.getValue()) {
+								cbi2= cbi2+1;
+							}else if (comboBox_5.getSelectedItem().equals("Chicago Bulls")&&(int)spinner_5.getValue()<(int)spinner_4.getValue()) {
+								cbg2= cbg2+1;
+							}else if(comboBox_5.getSelectedItem().equals("Chicago Bulls")&&(int)spinner_5.getValue()==(int)spinner_4.getValue()){
+								cbe2= cbe2+1;
+							}
+							if (comboBox_5.getSelectedItem().equals("Cleveland Cavaliers")&&(int)spinner_5.getValue()>(int)spinner_4.getValue()) {
+								cci2= cci2+1;
+							}else if (comboBox_5.getSelectedItem().equals("Cleveland Cavaliers")&&(int)spinner_5.getValue()<(int)spinner_4.getValue()) {
+								ccg2= ccg2+1;
+							}else if(comboBox_5.getSelectedItem().equals("Cleveland Cavaliers")&&(int)spinner_5.getValue()==(int)spinner_4.getValue()){
+								cce2= cce2+1;
+							}
+							if (comboBox_5.getSelectedItem().equals("Atlanta Hawks")&&(int)spinner_5.getValue()>(int)spinner_4.getValue()) {
+								ahi2= ahi2+1;
+							}else if (comboBox_5.getSelectedItem().equals("Atlanta Hawks")&&(int)spinner_5.getValue()<(int)spinner_4.getValue()) {
+								ahg2= ahg2+1;
+							}else if(comboBox_5.getSelectedItem().equals("Atlanta Hawks")&&(int)spinner_5.getValue()==(int)spinner_4.getValue()){
+								ahe2= ahe2+1;
+							}
+							if (comboBox_5.getSelectedItem().equals("Charlotte Hornets")&&(int)spinner_5.getValue()>(int)spinner_4.getValue()) {
+								chi2= chi2+1;
+							}else if (comboBox_5.getSelectedItem().equals("Charlotte Hornets")&&(int)spinner_5.getValue()<(int)spinner_4.getValue()) {
+								chg2= chg2+1;
+							}else if(comboBox_5.getSelectedItem().equals("Charlotte Hornets")&&(int)spinner_5.getValue()==(int)spinner_4.getValue()){
+								che2= che2+1;
+							}
+							
+							if (hamarra==true) {
+								Denb2GetSet Talde = new Denb2GetSet ();
+								
+								Denb2GetSet.TaldeIzen = "Boston Celtics";
+								Denb2GetSet.Irabaziak = bci2;
+								Denb2GetSet.Galerak = bcg2;
+								Denb2GetSet.Berdina = bce2;
+								
+								den2BC.add("Boston Celtics");
+								den2BC.add(bci2);
+								den2BC.add(bcg2);
+								den2BC.add(bce2);
+
+								den2BN.add("Brooklyn Nets");
+								den2BN.add(bni2);
+								den2BN.add(bng2);
+								den2BN.add(bne2);
+								
+								den2CB.add("Chicago Bulls");
+								den2CB.add(cbi2);
+								den2CB.add(cbg2);
+								den2CB.add(cbe2);
+
+								den2CC.add("Cleveland Cavaliers");
+								den2CC.add(cci2);
+								den2CC.add(ccg2);
+								den2CC.add(cce2);
+
+								den1AH.add("Atlanta Hawks");
+								den1AH.add(ahi2);
+								den1AH.add(ahg2);
+								den1AH.add(ahe2);
+
+								den1CH.add("Charlotte Hornets");
+								den1CH.add(chi2);
+								den1CH.add(chg2);
+								den1CH.add(che2);
+
+								den1[0] = new ArrayList<>();
+								den1[0].add(den1BC);
+
+								den1[1] = new ArrayList<>();
+								den1[1].add(den1BN);
+
+								den1[2] = new ArrayList<>();
+								den1[2].add(den1CB);
+
+								den1[3] = new ArrayList<>();
+								den1[3].add(den1CC);
+
+								den1[4] = new ArrayList<>();
+								den1[4].add(den1AH);
+
+								den1[5] = new ArrayList<>();
+								den1[5].add(den1CH);
+								hamarra=false;
+							}
+							
+							jaur3=true;
 							
 						}else if(hiruDen=true) {
 							if (comboBox.getSelectedItem().equals("Boston Celtics")&&(int)spinner.getValue()>(int)spinner_1.getValue()) {

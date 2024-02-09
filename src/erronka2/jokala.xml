@@ -1,302 +1,351 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Jokalariak>
-                            
+                                
+    
     
     
     
     
     
     <Jokalaria>
-                                                        
+                                                                
+        
         
         
         
         
         
         <Izena>Paco</Izena>
-                                                        
+                                                                
+        
         
         
         
         
         
         <Abiadura>45</Abiadura>
-                                                        
+                                                                
+        
         
         
         
         
         
         <Defentza>112</Defentza>
-                                                        
+                                                                
+        
         
         
         
         
         
         <Punteria>60</Punteria>
-                                                    
+                                                            
+    
     
     
     
     
     
     </Jokalaria>
-                            
+                                
+    
     
     
     
     
     
     <Jokalaria>
-                                                        
+                                                                
+        
         
         
         
         
         
         <Izena>Paquito</Izena>
-                                                        
+                                                                
+        
         
         
         
         
         
         <Abiadura>108</Abiadura>
-                                                        
+                                                                
+        
         
         
         
         
         
         <Defentza>52</Defentza>
-                                                        
+                                                                
+        
         
         
         
         
         
         <Punteria>93</Punteria>
-                                                    
+                                                            
+    
     
     
     
     
     
     </Jokalaria>
-                            
+                                
+    
     
     
     
     
     
     <Jokalaria>
-                                                        
+                                                                
+        
         
         
         
         
         
         <Izena>Manolito</Izena>
-                                                        
+                                                                
+        
         
         
         
         
         
         <Abiadura>97</Abiadura>
-                                                        
+                                                                
+        
         
         
         
         
         
         <Defentza>38</Defentza>
-                                                        
+                                                                
+        
         
         
         
         
         
         <Punteria>111</Punteria>
-                                                    
+                                                            
+    
     
     
     
     
     
     </Jokalaria>
-                            
+                                
+    
     
     
     
     
     
     <Jokalaria>
-                                                        
+                                                                
+        
         
         
         
         
         
         <Izena>Manolo</Izena>
-                                                        
+                                                                
+        
         
         
         
         
         
         <Abiadura>50</Abiadura>
-                                                        
+                                                                
+        
         
         
         
         
         
         <Defentza>94</Defentza>
-                                                        
+                                                                
+        
         
         
         
         
         
         <Punteria>72</Punteria>
-                                                    
+                                                            
+    
     
     
     
     
     
     </Jokalaria>
-                            
+                                
+    
     
     
     
     
     
     <Jokalaria>
-                                                        
+                                                                
+        
         
         
         
         
         
         <Izena>Galileo</Izena>
-                                                        
+                                                                
+        
         
         
         
         
         
         <Abiadura>85</Abiadura>
-                                                        
+                                                                
+        
         
         
         
         
         
         <Defentza>31</Defentza>
-                                                        
+                                                                
+        
         
         
         
         
         
         <Punteria>99</Punteria>
-                                                    
+                                                            
+    
     
     
     
     
     
     </Jokalaria>
-                            
+                                
+    
     
     
     
     
     
     <Jokalaria>
-                                                        
+                                                                
+        
         
         
         
         
         
         <Izena>Gervasio</Izena>
-                                                        
+                                                                
+        
         
         
         
         
         
         <Abiadura>73</Abiadura>
-                                                        
+                                                                
+        
         
         
         
         
         
         <Defentza>102</Defentza>
-                                                        
+                                                                
+        
         
         
         
         
         
         <Punteria>44</Punteria>
-                                                    
+                                                            
+    
     
     
     
     
     
     </Jokalaria>
-                            
+                                
+    
     
     
     
     
     
     <Jokalaria>
-                                
+                                        
+        
         
         
         <Izena>Nicolas</Izena>
-                                
+                                        
+        
         
         
         <Abiadura>118</Abiadura>
-                                
+                                        
+        
         
         
         <Defentza>28</Defentza>
-                                
+                                        
+        
         
         
         <Punteria>75</Punteria>
-                            
+                                    
     
+    
+    
+    </Jokalaria>
+            
+    
+    
+    <Jokalaria>
+                        
+        
+        <Izena>Alberto</Izena>
+                        
+        
+        <Abiadura>30</Abiadura>
+                        
+        
+        <Punteria>60</Punteria>
+                        
+        
+        <Defentza>90</Defentza>
+                    
     
     </Jokalaria>
         
-    
+
     <Jokalaria>
-                
-        <Izena>Alberto</Izena>
-                
-        <Abiadura>30</Abiadura>
-                
-        <Punteria>60</Punteria>
-                
-        <Defentza>90</Defentza>
-            
-    </Jokalaria>
-    
-    <Jokalaria>
-        <Izena>a</Izena>
-        <Abiadura>0</Abiadura>
-        <Punteria>0</Punteria>
-        <Defentza>0</Defentza>
+        <Izena>Juan</Izena>
+        <Abiadura>100</Abiadura>
+        <Punteria>30</Punteria>
+        <Defentza>60</Defentza>
     </Jokalaria>
 </Jokalariak>
